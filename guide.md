@@ -162,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 Once `next-themes` is set up, it’s time to implement a toggle switcher or button to give users the ability to change the app’s theme. 
 
 1. Create a `components` folder, if you don’t have one
-2. In this folder, create a `theme-switcher.ts` file and add the following code. For this, the `useTheme` hook is used again to retrieve the `theme` (current active theme being applied to the application) and `setTheme` (setter function that allows you to set the theme programatically). This ensures you can interact with the current theme and manage it. 
+2. In this folder, create a `theme-switcher.tsx` file and add the following code. For this, the `useTheme` hook is used again to retrieve the `theme` (current active theme being applied to the application) and `setTheme` (setter function that allows you to set the theme programatically). This ensures you can interact with the current theme and manage it. 
 
 ```tsx
 'use client'
