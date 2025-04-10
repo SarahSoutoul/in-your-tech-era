@@ -184,7 +184,7 @@ export default function ThemeSwitcher() {
 
 With the theme switcher set up, it’s time to include it in your homepage, or any other pages of you choice. 
 
-1. In your `app/page.ts`, add the following code
+1. In your `app/page.tsx`, add the following code
 
 ```tsx
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
