@@ -31,20 +31,7 @@ A user's process of signing in would work as follows. This example assumes that 
 > What happens if an attacker gets their hands on your session ID? Generally, the answer here is that you're in trouble. If an attacker gets your session ID, they can sign in as you. Therefore, it's best practice to use [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS) (ensures attacker can't [sniff it](https://en.wikipedia.org/wiki/Sniffing_attack)) and ensure the cookie is [set as `HttpOnly`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#httponly) (ensures attacker can't get it via remote JavaScript execution).
 
 
-  <CodeBlockTabs options={["npm", "yarn", "pnpm", "bun"]}>
-    ```bash {{ filename: 'terminal' }}
-    npm create next-app@latest
-    ```
-
-    ```bash {{ filename: 'terminal' }}
-    yarn create next-app
-    ```
-
-    ```bash {{ filename: 'terminal' }}
-    pnpm create next-app
-    ```
-
-    ```bash {{ filename: 'terminal' }}
-    bun create next-app
-    ```
-  </CodeBlockTabs>
+```sh {{ filename: '.env' }}
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY={{pub_key}}
+CLERK_SECRET_KEY={{secret}}
+```
