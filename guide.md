@@ -23,7 +23,7 @@ Let’s get started!
 
 Run the following command to install `next-themes` to your Next.js application
 
-```sh {{ filename: '.env' }}
+```shell
 npm install next-themes
 ```
 
