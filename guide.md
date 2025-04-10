@@ -41,12 +41,12 @@ npm install next-themes
 The `ThemeProvider` component from `next-themes` is a **React context provider** that manages the theme state in your Next.js application. It wraps your entire app to provide theme-related functionality globally. 
 
 1. In your `/app` folder, create a `/providers` folder
-2. Inside this directory, create a **`theme-provider.ts`** file with the following code to configure your custom theme provider. This ensures the `ThemeProvider` (renamed `NextThemeProvider` in the code) only renders on the client side and delays rendering until the component is mounted, avoiding hydration errors.  
+2. Inside this directory, create a **`theme-provider.tsx`** file with the following code to configure your custom theme provider. This ensures the `ThemeProvider` (renamed `NextThemeProvider` in the code) only renders on the client side and delays rendering until the component is mounted, avoiding hydration errors.  
 
 ```tsx
 'use client'
 
-import {useEffect, useState} as React from 'react'
+import {useEffect, useState} from 'react'
 import { ThemeProvider as NextThemeProvider } from 'next-themes'
 
 export function ThemeProvider({ children, ...props }: React.ComponentProps<typeof NextThemeProvider>) {
