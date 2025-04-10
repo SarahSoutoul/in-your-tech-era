@@ -82,28 +82,31 @@ To prevent this issue, the `mounted` state delays rendering of the theme provide
 
 To ensure that Clerk’s authentication UI follows the selected theme, Clerk components allow you to customize the appearance through the `baseTheme` property. For more information on Clerk themes, refer to the [Clerk documentation on themes](https://clerk.com/docs/customization/themes). 
 
-1. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
+1. Run the following command to install `@clerk/themes` to your Next.js application
+  
+  ```shell
+  npm install @clerk/themes
+  ```
+
+2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
 # NOTE ON THE FACT THEY ALREADY HAVE A CLERK PROVIDER BUT WE WILL REFACTOR IT IN THE NEXT STEP
 
-```tsx
-'use client';
-
-import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
-import { useTheme } from 'next-themes';
-
-export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
-  // Retrieves the resolved theme from the useTheme hook
-  const { resolvedTheme } = useTheme();
-
-  return (
-    <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
-      {children}
-    </ClerkProvider>
-  );
-}
-```
+  ```tsx
+  'use client'
+  
+  import { ClerkProvider } from '@clerk/nextjs'
+  import { dark } from '@clerk/themes'
+  import { useTheme } from 'next-themes'
+  
+  export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
+    const { resolvedTheme } = useTheme()
+  
+    return (
+      <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>{children}</ClerkProvider>
+    )
+  }
+  ```
 
 <aside>
 💡
