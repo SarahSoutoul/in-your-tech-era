@@ -129,8 +129,8 @@ Now, it’s time to integrate both the theme provider and the Clerk provider in 
 
 ```tsx
 import type { Metadata } from 'next';
-import { ThemeProvider } from '../providers/theme-provider';
-import ClerkProvider from '../providers/clerk-provider';
+import { ThemeProvider } from './providers/theme-provider';
+import ClerkProvider from './providers/clerk-provider';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
