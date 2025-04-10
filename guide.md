@@ -28,9 +28,11 @@ npm install next-themes
 ```
 
 <aside>
-💡
 
-**More information on `next-themes`** 
+> Text that is a quote
+
+> [!NOTE]
+> **More information on `next-themes`** 
 
 `next-themes` is a lightweight theme management library for Next.js applications. It provides an easy and quick way to implement dark mode and theme switching by manging the theme state using local storage and class-based styling.
 
