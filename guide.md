@@ -44,6 +44,8 @@ The `ThemeProvider` component from `next-themes` is a **React context provider**
 2. Inside this directory, create a **`theme-provider.tsx`** file with the following code to configure your custom theme provider. This ensures the `ThemeProvider` (renamed `NextThemeProvider` in the code) only renders on the client side and delays rendering until the component is mounted, avoiding hydration errors.  
 
 ```tsx
+// Handles hydration mismatch
+
 'use client'
 
 import {useEffect, useState} from 'react'
