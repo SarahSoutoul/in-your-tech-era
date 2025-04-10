@@ -6,7 +6,7 @@ In this guide, you'll learn how to implement a theme switcher for your Clerk-pow
 
 To achieve this, we’ll use the `next-themes` library to handle theme switching effectively.
 
-This guide assumes you've already set up a Next.js project with Clerk authentication and are using Next.js App Router, but the concepts can be adapted to Next.js Pages Router. If you haven’t, follow the steps in the **Clerk Next.js Quickstart guide**.
+This guide assumes you've already set up a Next.js project with Clerk authentication and are using Next.js App Router, but the concepts can be adapted to Next.js Pages Router. If you haven’t, follow the steps in the [**Clerk Next.js Quickstart guide*](https://clerk.com/docs/quickstarts/nextjs).
 
 ## Prerequisites
 
