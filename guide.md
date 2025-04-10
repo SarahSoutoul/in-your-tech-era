@@ -84,6 +84,8 @@ To ensure that Clerk’s authentication UI follows the selected theme, Clerk com
 
 1. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
+# NOTE ON THE FACT THEY ALREADY HAVE A CLERK PROVIDER BUT WE WILL REFACTOR IT IN THE NEXT STEP
+
 ```tsx
 'use client';
 
