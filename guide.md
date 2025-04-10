@@ -27,19 +27,14 @@ Run the following command to install `next-themes` to your Next.js application
 npm install next-themes
 ```
 
-<aside>
-
-
 > [!NOTE]
 > **More information on `next-themes`** 
-
+> 
 > `next-themes` is a lightweight theme management library for Next.js applications. It provides an easy and quick way to implement dark mode and theme switching by manging the theme state using local storage and class-based styling.
-
+> 
 > It follows a class-based approach to theme switching. It applies a CSS class (like `light` or `dark` ) to the `<html>` element, which allows global styling based on the selected element. For example, if the theme is **dark**, it will add `class="dark"` to the `<html>` tag. You can then use Tailwind CSS or regular CSS to style elements based on this class. When the theme is toggled, `next-themes` ensures the correct class is applied to `<html>`, making the UI update instantly.
-
+> 
 > `next-themes` can also detect the user’s system preferences (`light` or `dark`) and applies it by default. In addition to that, it saves the selected theme in `localStorage`, so the preference remains even after refreshing the page.
-
-</aside>
 
 ## 2. Create a Theme Provider
 
