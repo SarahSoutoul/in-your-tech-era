@@ -13,6 +13,7 @@ In this guide, you'll learn how to implement a theme switcher for your Clerk-pow
 
 This will be achieved by using [next-themes](https://www.npmjs.com/package/next-themes), a lightweight theme management library for Next.js apps. It provides an easy and quick way to implement dark mode and theme switching by managing the theme state using local storage and class-based styling.
 
+> [!NOTE]
 > **How does `next-themes` work?**  
 >  
 > It follows a class-based approach to theme switching. It applies a CSS class (like `light` or `dark`) to the `<html>` element, which allows global styling based on the selected theme.  
@@ -74,7 +75,7 @@ The `<ThemeProvider>` component from `next-themes` is a React context provider *
     }
     ```
     
-
+> [!NOTE]
 > **Why is a custom `<ThemeProvider>` needed?**  
 >  
 > By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes`.  
@@ -99,6 +100,7 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
     
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
+  > [!NOTE]
   > **What is `resolvedTheme`?**  
   >  
   > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
@@ -123,8 +125,9 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
         </ClerkProvider>
       );
     }
-    ```
-    
+  ```
+  
+  > [!NOTE]
   > **Why is a custom `<ClerkProvider>` needed?**  
   >  
   > Similar to the custom `<ThemeProvider>`, a custom `ClerkProvider` is necessary to handle client-side theme synchronization in a Next.js app.  
