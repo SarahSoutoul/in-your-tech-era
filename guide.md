@@ -22,16 +22,7 @@ This will be achieved by using [next-themes](https://www.npmjs.com/package/next-
 >  
 > `next-themes` can also detect the user’s system preferences (`light` or `dark`) and applies it by default. In addition to that, it saves the selected theme in `localStorage`, so the preference remains even after refreshing the page.
 
-
-## Before you start
-
 This guide assumes you've already set up a Next.js project with Clerk authentication and are using Next.js App Router, but the concepts can be adapted to Next.js Pages Router. If you haven’t, follow the steps in the [**Clerk Next.js Quickstart guide**](https://clerk.com/docs/quickstarts/nextjs).
-
-Before starting, ensure you have:
-
-- A Next.js app set up with Clerk, using the Clerk Next.js Quickstart guide
-- A Next.js app using the Next.js App Router
-- Basic understanding of Next.js and React
 
 Let’s get started! 
 
@@ -40,7 +31,6 @@ Let’s get started!
 ## 1. Install `next-themes`
 
 Run the following command to install `next-themes` to your Next.js app
-`{{ filename: 'terminal' }}`
 
 ```bash
 npm install next-themes
@@ -48,7 +38,7 @@ npm install next-themes
 
 ## 2. Create a `<ThemeProvider>`
 
-The `<ThemeProvider>` component from `next-themes` is a React context provider ****that manages the theme state in your Next.js app. It wraps your entire app to provide theme-related functionality globally. 
+The `<ThemeProvider>` component from `next-themes` is a React context provider that manages the theme state in your Next.js app. It wraps your entire app to provide theme-related functionality globally. 
 
 1. In your `/app` folder, create a `/providers` folder
 2. Inside this directory, create a `theme-provider.tsx` file with the following code to configure your custom theme provider. This ensures the `<ThemeProvider>` (renamed `<NextThemeProvider>` in the code) only renders on the client side and delays rendering until the component is mounted, avoiding hydration errors.  
@@ -99,32 +89,32 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
     
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
-      > [!NOTE]
-      > **What is `resolvedTheme`?**  
-      >  
-      > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
-      >  
-      > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
+> [!NOTE]
+> **What is `resolvedTheme`?**  
+>  
+> A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
+>  
+> This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
     
            
-    ```tsx
-    'use client';
+  ```tsx
+  'use client';
         
-    import { ClerkProvider } from '@clerk/nextjs';
-    import { dark } from '@clerk/themes';
-    import { useTheme } from 'next-themes';
+  import { ClerkProvider } from '@clerk/nextjs';
+  import { dark } from '@clerk/themes';
+  import { useTheme } from 'next-themes';
         
-    export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
-      // Retrieves the resolved theme from the useTheme hook
-      const { resolvedTheme } = useTheme();
+  export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
+    // Retrieves the resolved theme from the useTheme hook
+    const { resolvedTheme } = useTheme();
         
-      return (
-        <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
-          {children}
-        </ClerkProvider>
-        );
-      }
-    ```
+    return (
+      <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
+        {children}
+      </ClerkProvider>
+    );
+  }
+  ```
   
   > [!NOTE]
   > **Why is a custom `<ClerkProvider>` needed?**  
