@@ -89,32 +89,32 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
     
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
-> [!NOTE]
-> **What is `resolvedTheme`?**  
->  
-> A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
->  
-> This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
+    ```tsx
+    'use client';
+          
+    import { ClerkProvider } from '@clerk/nextjs';
+    import { dark } from '@clerk/themes';
+    import { useTheme } from 'next-themes';
+          
+    export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
+      // Retrieves the resolved theme from the useTheme hook
+      const { resolvedTheme } = useTheme();
+          
+      return (
+        <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
+          {children}
+        </ClerkProvider>
+      );
+    }
+    ```
+
+  > [!NOTE]
+  > **What is `resolvedTheme`?**  
+  >  
+  > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
+  >  
+  > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
     
-           
-  ```tsx
-  'use client';
-        
-  import { ClerkProvider } from '@clerk/nextjs';
-  import { dark } from '@clerk/themes';
-  import { useTheme } from 'next-themes';
-        
-  export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
-    // Retrieves the resolved theme from the useTheme hook
-    const { resolvedTheme } = useTheme();
-        
-    return (
-      <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
-        {children}
-      </ClerkProvider>
-    );
-  }
-  ```
   
   > [!NOTE]
   > **Why is a custom `<ClerkProvider>` needed?**  
@@ -256,9 +256,9 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 
 1. Run your project with the following command:
         
-  ```bash
-  npm run dev
-  ```
+    ```bash
+    npm run dev
+    ```
     
 2. Visit your app's homepage at [`http://localhost:3000`](http://localhost:3000/)
 3. Open your browser’s Developer Tools (Inspect) and go to the Console tab
@@ -275,27 +275,27 @@ Now, it’s time to implement styling for the app based on the class (`light` or
 In your `globals.css` file, add the following code. Ensure you have the `@import` and `@variant` lines. The `transition` property will ensure smooth transitions when switching between themes.
     
   ```css
-    /* globals.css */
-    @import "tailwindcss";
-    @variant dark (&:where(.dark, .dark *)); 
+  /* globals.css */
+  @import "tailwindcss";
+  @variant dark (&:where(.dark, .dark *)); 
     
-    /* Light mode (default) */
-    :root {
-      --background-color: #ffffff;
-      --text-color: #000000;
-    }
+  /* Light mode (default) */
+  :root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+  }
     
-    /* Dark mode */
-    .dark {
-      --background-color: #181818;
-      --text-color: #ffffff;
-    }
+  /* Dark mode */
+  .dark {
+    --background-color: #181818;
+    --text-color: #ffffff;
+  }
     
-    body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+   }
    ```
     
 
@@ -347,7 +347,7 @@ export default function CustomComponent() {
 
 WRITE ABOUT THE SIGN UP STUFF 
 
-## Conclusion
+## 9. Finished 🎉
 
 You’ve successfully implemented a theme switcher for a Clerk-powered Next.js app! Your users can now toggle between light and dark modes, and Clerk’s components will respect their preference.
 
