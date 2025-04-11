@@ -107,24 +107,24 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
       > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
     
            
-      ```tsx
-      'use client';
+    ```tsx
+    'use client';
         
-      import { ClerkProvider } from '@clerk/nextjs';
-      import { dark } from '@clerk/themes';
-      import { useTheme } from 'next-themes';
+    import { ClerkProvider } from '@clerk/nextjs';
+    import { dark } from '@clerk/themes';
+    import { useTheme } from 'next-themes';
         
-      export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
-          // Retrieves the resolved theme from the useTheme hook
-          const { resolvedTheme } = useTheme();
+    export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
+      // Retrieves the resolved theme from the useTheme hook
+      const { resolvedTheme } = useTheme();
         
-          return (
-            <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
-              {children}
-            </ClerkProvider>
-          );
-       }
-       ```
+      return (
+        <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
+          {children}
+        </ClerkProvider>
+        );
+      }
+    ```
   
   > [!NOTE]
   > **Why is a custom `<ClerkProvider>` needed?**  
