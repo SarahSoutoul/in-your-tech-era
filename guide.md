@@ -13,16 +13,14 @@ In this guide, you'll learn how to implement a theme switcher for your Clerk-pow
 
 This will be achieved by using [next-themes](https://www.npmjs.com/package/next-themes), a lightweight theme management library for Next.js apps. It provides an easy and quick way to implement dark mode and theme switching by managing the theme state using local storage and class-based styling.
 
-<aside>
-💡
+> **How does `next-themes` work?**  
+>  
+> It follows a class-based approach to theme switching. It applies a CSS class (like `light` or `dark`) to the `<html>` element, which allows global styling based on the selected theme.  
+>  
+> For example, if the theme is **dark**, it will add `class="dark"` to the `<html>` tag. You can then use Tailwind CSS or regular CSS to style elements based on this class. When the theme is toggled, `next-themes` ensures the correct class is applied to `<html>`, making the UI update instantly.  
+>  
+> `next-themes` can also detect the user’s system preferences (`light` or `dark`) and applies it by default. In addition to that, it saves the selected theme in `localStorage`, so the preference remains even after refreshing the page.
 
-**How does `next-themes` work?**
-
-It follows a class-based approach to theme switching. It applies a CSS class (like `light` or `dark` ) to the `<html>` element, which allows global styling based on the selected element. For example, if the theme is **dark**, it will add `class="dark"` to the `<html>` tag. You can then use Tailwind CSS or regular CSS to style elements based on this class. When the theme is toggled, `next-themes` ensures the correct class is applied to `<html>`, making the UI update instantly.
-
-`next-themes` can also detect the user’s system preferences (`light` or `dark`) and applies it by default. In addition to that, it saves the selected theme in `localStorage`, so the preference remains even after refreshing the page.
-
-</aside>
 
 ## Before you start
 
@@ -77,16 +75,14 @@ The `<ThemeProvider>` component from `next-themes` is a React context provider *
     ```
     
 
-<aside>
-💡
+> **Why do we need a custom `<ThemeProvider>`?**  
+>  
+> By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes`.  
+>  
+> This occurs because the theme is set client-side (e.g., from `localStorage` or system preferences), but in a server-rendered (SSR) environment, Next.js doesn’t know the preferred theme. The server may initially render the page with a different theme, causing a mismatch between the server-rendered and client-rendered HTML.  
+>  
+> To prevent this issue, the `mounted` state delays rendering of the theme provider and its children until the component has mounted on the client. This ensures that the correct theme is applied without mismatch.
 
-**Why do we need a custom** `<ThemeProvider>`**?**
-
-By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes` . This occurs because the theme is set client-side (e.g - from `localStorage` or system preferences), but in a server-rendered (SSR) environment, Next.js doesn’t know the preferred theme. The server may initially render the page with a different theme, causing a mismatch between the server-rendered and client-rendered HTML. 
-
-To prevent this issue, the `mounted` state delays rendering of the theme provider and its children until the component has mounted on the client. This ensures that the correct theme is applied without mismatch.
-
-</aside>
 
 ## 3. **Integrate Clerk with theme switching**
 
@@ -97,24 +93,20 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
 1. Run the following command to install `@clerk-themes` to your Next.js app
 `{{ filename: 'terminal' }}`
     
-    ```bash
-    npm install @clerk/themes
-    ```
+  ```bash
+  npm install @clerk/themes
+  ```
     
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
-    
-    <aside>
-    💡
-    
-    **Why do we need a custom `ClerkProvider`?**
-    
-    Similar to the custom `<ThemeProvider>` , a custom `ClerkProvider` is necessary to handle client-side theme synchronization in a Next.js app. Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR (Server-Side Rendering). If we were to configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.
-    
-    From your original setup, you may already have a `ClerkProvider` in your `app/layout.jsx` file. This will be refactored in the upcoming steps. 
-    
-    </aside>
-    
-    ```tsx
+
+  > **What is `resolvedTheme`?**  
+  >  
+  > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
+  >  
+  > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
+
+   
+  ```tsx
     'use client';
     
     import { ClerkProvider } from '@clerk/nextjs';
@@ -133,15 +125,14 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
     }
     ```
     
-    <aside>
-    💡
-    
-    What is `resolvedTheme` ?
-    
-    A property provided by the `useTheme` hook from `next-themes` - it represents the currently applied theme in your Next.js app. This value can either be ‘light’ or ‘dark’ depending on the theme set by the user or determined by the system’s preferences.
-    
-    </aside>
-    
+  > **Why do we need a custom `ClerkProvider`?**  
+  >  
+  > Similar to the custom `<ThemeProvider>`, a custom `ClerkProvider` is necessary to handle client-side theme synchronization in a Next.js app.  
+  >  
+  > Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR (Server-Side Rendering). If we were to configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
+  >  
+  > From your original setup, you may already have a `ClerkProvider` in your `app/layout.jsx` file. This will be refactored in the upcoming steps.
+  
 
 ## 4. **Apply providers in the root layout**
 
