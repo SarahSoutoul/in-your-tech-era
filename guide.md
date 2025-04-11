@@ -69,13 +69,13 @@ The `<ThemeProvider>` component from `next-themes` is a React context provider *
       // Return null on server-side and first render
       if (!mounted) return null
     
-      // Only render theme provider when we're on the client
+      // Only render theme provider when on the client
       return <NextThemeProvider {...props}>{children}</NextThemeProvider>
     }
     ```
     
 
-> **Why do we need a custom `<ThemeProvider>`?**  
+> **Why is a custom `<ThemeProvider>` needed?**  
 >  
 > By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes`.  
 >  
@@ -125,11 +125,11 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
     }
     ```
     
-  > **Why do we need a custom `ClerkProvider`?**  
+  > **Why is a custom `<ClerkProvider>` needed?**  
   >  
   > Similar to the custom `<ThemeProvider>`, a custom `ClerkProvider` is necessary to handle client-side theme synchronization in a Next.js app.  
   >  
-  > Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR (Server-Side Rendering). If we were to configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
+  > Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR (Server-Side Rendering). If you configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
   >  
   > From your original setup, you may already have a `ClerkProvider` in your `app/layout.jsx` file. This will be refactored in the upcoming steps.
   
@@ -138,8 +138,8 @@ The `appearance` prop accepts multiple properties, including the `baseTheme` pro
 
 Now, it’s time to integrate both the theme provider and the Clerk provider in the main app root layout so that both the theme and authentication UI are properly handled across the entire app.
 
-1. In your `app/layout.tsx` file, remove the `<ClerkProvider>` component import from `@clerk/nextjs` since we have a custom one now
-2. Import the `<ThemeProvider>` and `<ClerkProvider>` providers from their respective files
+1. In your `app/layout.tsx` file, remove the `<ClerkProvider>` component import from `@clerk/nextjs` since a custom one is now being used.  
+2. Import the `<ThemeProvider>` and `<ClerkProvider>` providers from their respective files.
     
     ```bash
     import { ThemeProvider } from './providers/theme-provider';
