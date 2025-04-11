@@ -225,44 +225,44 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 1. In your `app/layout.tsx` file, import  `<ThemeSwitcher />`  into your app by adding `import ThemeSwitcher from './components/theme-switcher';` at the top of your file.
 2. Render `<ThemeSwitcher />` within your `<header>` under your Clerk authentication components.
     
-    ```tsx
+  ```tsx
     import ThemeSwitcher from './components/theme-switcher';
     
     export default function RootLayout({ children }: { children: React.ReactNode }) {
       return (
-    	      <html lang="en">
-    	        <body
-    	          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    	        >
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                  <ClerkProvider>
-                    <header className="flex justify-end items-center p-4 gap-4 h-16">
-                      <SignedOut>
-                        <SignInButton />
-                        <SignUpButton />
-                      </SignedOut>
-                      <SignedIn>
-                        <UserButton />
-                      </SignedIn>
-                      <ThemeSwitcher />
-                    </header>
-                    {children}
-                  </ClerkProvider>
-                </ThemeProvider>
-    	        </body>
-    	      </html>
+    	  <html lang="en">
+    	    <body
+    	      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    	    >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <ClerkProvider>
+                <header className="flex justify-end items-center p-4 gap-4 h-16">
+                  <SignedOut>
+                    <SignInButton />
+                    <SignUpButton />
+                  </SignedOut>
+                  <SignedIn>
+                    UserButton />
+                  </SignedIn>
+                  <ThemeSwitcher />
+                </header>
+                {children}
+              </ClerkProvider>
+            </ThemeProvider>
+    	    </body>
+    	  </html>
       );
     }
-    ```
+  ```
     
 
 ## 7. Check what’s under the hood
 
 1. Run your project with the following command:
         
-        ```bash
-        npm run dev
-        ```
+  ```bash
+  npm run dev
+  ```
     
 2. Visit your app's homepage at [`http://localhost:3000`](http://localhost:3000/)
 3. Open your browser’s Developer Tools (Inspect) and go to the Console tab
@@ -278,7 +278,7 @@ Now, it’s time to implement styling for the app based on the class (`light` or
 
 In your `globals.css` file, add the following code. Ensure you have the `@import` and `@variant` lines. The `transition` property will ensure smooth transitions when switching between themes.
     
-    ```css
+  ```css
     /* globals.css */
     @import "tailwindcss";
     @variant dark (&:where(.dark, .dark *)); 
@@ -300,7 +300,7 @@ In your `globals.css` file, add the following code. Ensure you have the `@import
       color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    ```
+   ```
     
 
 ### **Apply individual styles**
