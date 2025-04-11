@@ -226,33 +226,33 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 2. Render `<ThemeSwitcher />` within your `<header>` under your Clerk authentication components.
     
   ```tsx
-    import ThemeSwitcher from './components/theme-switcher';
+  import ThemeSwitcher from './components/theme-switcher';
     
-    export default function RootLayout({ children }: { children: React.ReactNode }) {
-      return (
-    	  <html lang="en">
-    	    <body
-    	      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    	    >
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <ClerkProvider>
-                <header className="flex justify-end items-center p-4 gap-4 h-16">
-                  <SignedOut>
-                    <SignInButton />
-                    <SignUpButton />
-                  </SignedOut>
-                  <SignedIn>
-                    UserButton />
-                  </SignedIn>
-                  <ThemeSwitcher />
-                </header>
-                {children}
-              </ClerkProvider>
-            </ThemeProvider>
-    	    </body>
-    	  </html>
-      );
-    }
+  export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+    	<html lang="en">
+    	  <body
+    	    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    	  >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ClerkProvider>
+              <header className="flex justify-end items-center p-4 gap-4 h-16">
+                <SignedOut>
+                  <SignInButton />
+                  <SignUpButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+                <ThemeSwitcher />
+              </header>
+              {children}
+            </ClerkProvider>
+          </ThemeProvider>
+    	  </body>
+    	</html>
+    );
+  }
   ```
     
 
