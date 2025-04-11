@@ -345,15 +345,17 @@ export default function CustomComponent() {
 
 ## 8. One last hurdle
 
+**This step is specifically for applications that have not built their own sign-in or sign-up pages within their Clerk apps using `<SignIn />` and `<SignUp />` . If you have, you can skip this step**
+
 By default, when using `<SignInButton />` or `<SignUpButton />` from Clerk, users are redirected to Clerk’s external authentication page. Since the `next-themes` package stores the theme preference (light/dark) in `localStorage` and applies it to the `<html>` element **only within your app**, the theme setting is lost when users are redirected.
 
 
-To persist your theme, you need to render the complete sign-in/sign-up interface directly within your app's UI using the `<SignIn />` and `<SignUp />` components rather than relying on Clerk’s external authentication pages. Follow this [guide](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page) to set it up.
+To persist your theme, you need to render the complete sign-in/sign-up interface directly within your app's UI using the `<SignIn />` and `<SignUp />` components rather than relying on Clerk’s external authentication pages. Follow this [guide](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page) to set it up!
 
 
 ## 9. Finished 🎉
 
 You’ve successfully implemented a theme switcher for a Clerk-powered Next.js app! Your users can now toggle between light and dark modes, and Clerk’s components will respect their preference.
 
-For more information on theming Clerk components, visit Clerk's Theming Documentation.
+For more information on theming Clerk components, visit [Clerk's Theming Documentation](https://clerk.com/docs/customization/themes).
 
