@@ -92,40 +92,39 @@ To ensure that Clerk’s authentication UI follows the selected theme, Clerk pro
 The `appearance` prop accepts multiple properties, including the `baseTheme` property used to pass the corresponding theme. This is what can be used to sync up the Clerk components with the selected theme. For more information on Clerk themes, refer to the [Clerk documentation on themes](https://clerk.com/docs/customization/themes). 
 
 1. Run the following command to install `@clerk-themes` to your Next.js app
-`{{ filename: 'terminal' }}`
     
-  ```bash
-  npm install @clerk/themes
-  ```
+      ```bash
+      npm install @clerk/themes
+      ```
     
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` attribute, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
-  > [!NOTE]
-  > **What is `resolvedTheme`?**  
-  >  
-  > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
-  >  
-  > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
-
-   
-  ```tsx
-    'use client';
+      > [!NOTE]
+      > **What is `resolvedTheme`?**  
+      >  
+      > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
+      >  
+      > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
     
-    import { ClerkProvider } from '@clerk/nextjs';
-    import { dark } from '@clerk/themes';
-    import { useTheme } from 'next-themes';
-    
-    export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
-      // Retrieves the resolved theme from the useTheme hook
-      const { resolvedTheme } = useTheme();
-    
-      return (
-        <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
-          {children}
-        </ClerkProvider>
-      );
-    }
-  ```
+           
+      ```tsx
+        'use client';
+        
+        import { ClerkProvider } from '@clerk/nextjs';
+        import { dark } from '@clerk/themes';
+        import { useTheme } from 'next-themes';
+        
+        export default function _ClerkProvider({ children }: { children: React.ReactNode }) {
+          // Retrieves the resolved theme from the useTheme hook
+          const { resolvedTheme } = useTheme();
+        
+          return (
+            <ClerkProvider appearance={resolvedTheme === 'dark' ? { baseTheme: dark } : undefined}>
+              {children}
+            </ClerkProvider>
+          );
+        }
+      ```
   
   > [!NOTE]
   > **Why is a custom `<ClerkProvider>` needed?**  
@@ -144,7 +143,7 @@ Now, it’s time to integrate both the theme provider and the Clerk provider in 
 1. In your `app/layout.tsx` file, remove the `<ClerkProvider>` component import from `@clerk/nextjs` since a custom one is now being used.  
 2. Import the `<ThemeProvider>` and `<ClerkProvider>` providers from their respective files.
     
-    ```bash
+    ```tsx
     import { ThemeProvider } from './providers/theme-provider';
     import ClerkProvider from './providers/clerk-provider';
     ```
@@ -172,26 +171,24 @@ Now, it’s time to integrate both the theme provider and the Clerk provider in 
         
         export default function RootLayout({ children }: { children: React.ReactNode }) {
           return (
-        	      <html lang="en">
-        	        <body
-        	          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        	        >
-                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                      <ClerkProvider>
-                        <header className="flex justify-end items-center p-4 gap-4 h-16">
-                          <SignedOut>
-                            <SignInButton />
-                            <SignUpButton />
-                          </SignedOut>
-                          <SignedIn>
-                            <UserButton />
-                          </SignedIn>
-                        </header>
-                        {children}
-                      </ClerkProvider>
-                    </ThemeProvider>
-        	        </body>
-        	      </html>
+             <html lang="en">
+        	   <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                          <ClerkProvider>
+                            <header className="flex justify-end items-center p-4 gap-4 h-16">
+                              <SignedOut>
+                                <SignInButton />
+                                <SignUpButton />
+                              </SignedOut>
+                              <SignedIn>
+                                <UserButton />
+                              </SignedIn>
+                            </header>
+                            {children}
+                          </ClerkProvider>
+                      </ThemeProvider>
+              </body>
+            </html>
           );
         }
         ```
@@ -221,7 +218,7 @@ Once `next-themes` is set up, it’s time to implement a toggle switcher to give
     ```
     
 
-## 6. Add the Theme Toggler to the Homepage
+## 6. Render the theme switcher
 
 With the theme switcher set up, it’s time to include it in any page of your choice. The following code renders `<ThemeSwitcher />` in the root layout.
 
@@ -261,11 +258,11 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 
 ## 7. Check what’s under the hood
 
-1.   Run your project with the following command:
-    
-    ```bash
-    npm run dev
-    ```
+1. Run your project with the following command:
+        
+        ```bash
+        npm run dev
+        ```
     
 2. Visit your app's homepage at [`http://localhost:3000`](http://localhost:3000/)
 3. Open your browser’s Developer Tools (Inspect) and go to the Console tab
@@ -279,7 +276,7 @@ Now, it’s time to implement styling for the app based on the class (`light` or
 
 ### **Apply global theme styles in `globals.css`**
 
-1. In your `globals.css` file, add the following code. Ensure you have the `@import` and `@variant` lines. The `transition` property will ensure smooth transitions when switching between themes.
+In your `globals.css` file, add the following code. Ensure you have the `@import` and `@variant` lines. The `transition` property will ensure smooth transitions when switching between themes.
     
     ```css
     /* globals.css */
@@ -326,7 +323,7 @@ Similarly, for a button:
 </button>
 ```
 
-1. How to use inline styles with the `useTheme` Hook
+**2. How to use inline styles with the `useTheme()` Hook**
 
 If you want to apply inline styles dynamically, you can use the `useTheme` hook from `next-themes` to conditionally style elements.
 
