@@ -343,9 +343,13 @@ export default function CustomComponent() {
 }
 ```
 
-## 8. How to ensure your Clerk components adap to the theme
+## 8. One last hurdle
 
-WRITE ABOUT THE SIGN UP STUFF 
+By default, when using `<SignInButton />` or `<SignUpButton />` from Clerk, users are redirected to Clerk’s external authentication page. Since the `next-themes` package stores the theme preference (light/dark) in `localStorage` and applies it to the `<html>` element **only within your app**, the theme setting is lost when users are redirected.
+
+
+To persist your theme, you need to render the complete sign-in/sign-up interface directly within your app's UI using the `<SignIn />` and `<SignUp />` components rather than relying on Clerk’s external authentication pages. Follow this [guide](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page) to set it up.
+
 
 ## 9. Finished 🎉
 
