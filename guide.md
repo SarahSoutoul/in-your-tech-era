@@ -309,7 +309,7 @@ In your `globals.css` file, add the following code. Ensure you have the `@import
 
 Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tailwind’s `dark:` modifier.
 
-```tsx
+```html
 <p className="text-black dark:text-white">
   This text will be black in light mode and white in dark mode.
 </p>
@@ -317,7 +317,7 @@ Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tail
 
 Similarly, for a button:
 
-```tsx
+```html
 <button className="bg-gray-200 text-black dark:bg-gray-700 dark:text-white px-4 py-2 rounded-md">
   Click me
 </button>
@@ -334,7 +334,7 @@ export default function CustomComponent() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <divstyle={{
+    <div style={{
         backgroundColor: resolvedTheme === 'dark' ? '#181818' : '#ffffff',
         color: resolvedTheme === 'dark' ? '#ffffff' : '#000000',
         padding: '20px',
