@@ -17,21 +17,21 @@ Even now, as someone who’s taught hundreds of students and worked as a softwar
 
 This app is built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org), [Clerk](https://clerk.dev) for auth and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-## 🚀 Getting Started
+## 📦 Getting Started
 
-1. Run the following to install dependencies
+### 1. Run the following to install dependencies
 
-```bash
-npm install
-```
+  ```bash
+  npm install
+  ```
 
-2. Run the following to start the development server
+### 2. Run the following to start the development server
 
-```bash
-npm run dev
-```
+  ```bash
+  npm run dev
+  ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result
+### 3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result
 
 ## 🛠️ Tech Stack
 
@@ -45,7 +45,12 @@ npm run dev
 | Hosting         | <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />                | Deployment platform optimized for Next.js       |
 | Version Control | <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> | Code collaboration and versioning               |
 
-## Deployed version
+## 🚀 Deployed Version
+
+You can check out the live version of this project here:  
+🔗 [your-project-name.vercel.app](https://your-project-name.vercel.app)
+
+> Hosted on [Vercel](https://vercel.com), optimized for fast deployment and seamless integration with Next.js.
 
 # ✍️ My Project Journey  
 
