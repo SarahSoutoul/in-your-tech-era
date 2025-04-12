@@ -37,14 +37,13 @@ npm run dev
 
 | Category        | Tech Used                                  | Notes                                           |
 |-----------------|---------------------------------------------|-------------------------------------------------|
-| Framework       | [Next.js](https://nextjs.org)              | App routing, server-side rendering              |
-| Language        | [TypeScript](https://www.typescriptlang.org)| Strongly typed superset of JavaScript           |
-| Library         | [React](https://react.dev)                 | UI library for building components              |
-| Styling         | [Tailwind CSS](https://tailwindcss.com)    | Utility-first styling framework                 |
-| Auth            | [Clerk](https://clerk.dev)                 | Authentication and user/session management      |
-| Hosting         | [Vercel](https://vercel.com)               | Deployment platform optimized for Next.js       |
-| Fonts           | [Geist](https://vercel.com/font)           | Clean, modern font from Vercel                  |
-| Version Control | [Git](https://git-scm.com) & GitHub        | Code collaboration and versioning               |
+| Framework       | <img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />   | App routing, server-side rendering              |
+| Language        | <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /> | Strongly typed superset of JavaScript           |
+| Library         | <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />                  | UI library for building components              |
+| Styling         | <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />    | Utility-first styling framework                 |
+| Auth            | <img src="https://img.shields.io/badge/Clerk-6C47FF.svg?style=for-the-badge&logo=Clerk&logoColor=white" />                   | Authentication and user/session management      |
+| Hosting         | <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />                | Deployment platform optimized for Next.js       |
+| Version Control | <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> | Code collaboration and versioning               |
 
 ## Deployed version
 
