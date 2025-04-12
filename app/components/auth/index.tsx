@@ -20,7 +20,7 @@ export default function Auth() {
                 <a className="font-bold text-2xl">
                     In your <span className="text-[#FF80B5] dark:text-purple-400">tech</span> era
                 </a>
-                <p className="font-semibold">Because every woman deserves her tech era</p>
+                <p className="font-semibold">Because every girl deserves her tech era</p>
             </div>
             <SignInButton>
                 <button className="rounded-md py-2 px-4 bg-[#424242] text-white border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 hover:text-white active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" type="button">
