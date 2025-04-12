@@ -7,12 +7,12 @@ export const testimonials = [
     {
       id: 2,
       testimonial: "Sarah was amazing! Her style of teaching was a massive reason to my success at the academy. She spoke with clarity and confidence and made sure no student was left behind by checking if everyone was okay at certain checkpoints during lessons. She made us all feel very comfortable during an intense 12 weeks and was always there for support whenever we needed outside of classes. She made the learning fun with her continuous jokes and also moved through topics in a swift manner so nothing felt dragged on.",
-      name: "Max"
+      name: "Sophie"
     },
     {
       id: 3,
       testimonial: "I think Sarah is the best trainer at La Fosse. She always took the time to challenge me when I was feeling frustrated and always had time to help me when I was struggling with something. She was also very engaging in lectures and had some fantastic banter!",
-      name: "John"
+      name: "Claire"
     },
     {
       id: 4,
@@ -22,7 +22,7 @@ export const testimonials = [
     {
       id: 5,
       testimonial: "Sarah is very knowledgeable, down to earth and supportive. She always ensured every student was on the same page and would put extra time aside to support anyone struggling with the curriculum or who needed emotional support. She was also very present after the course ended and provided extra content and advice to be prepared for placements. She always went above and beyond! She is a star.",
-      name: "James"
+      name: "Eva"
     },
     {
       id: 6,

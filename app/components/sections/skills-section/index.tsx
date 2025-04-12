@@ -17,7 +17,7 @@ export default function SkillsSection() {
 
             <p className="text-center text-lg mt-6">
                 Ready to level up?  
-                <a href="https://lnkd.in/drWEg6Z5" className="text-purple-400 font-semibold hover:underline"> Let’s work together!</a>
+                <a href="https://lnkd.in/drWEg6Z5" className="text-[#FF80B5] dark:text-purple-400 font-semibold hover:underline"> Let’s work together!</a>
             </p>
         </div>
     </section>

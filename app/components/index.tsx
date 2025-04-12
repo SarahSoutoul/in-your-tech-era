@@ -5,3 +5,6 @@ export {default as AboutSection} from "./sections/about-section";
 export {default as SkillsSection} from "./sections/skills-section";
 export {default as BlogSection} from "./sections/blogs-section";
 export {default as TestimonialSection} from "./sections/testimonials-section";
+export {default as ServicesSection} from "./sections/services-section";
+export {default as Header} from "./common/header";
+export {default as Footer} from "./common/footer";

@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import {FaSun, FaMoon} from "react-icons/fa";
-import { Button } from '@/components/ui/button';
+import { Button } from '@/src/components/ui/button';
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
