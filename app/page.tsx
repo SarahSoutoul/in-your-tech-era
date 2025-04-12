@@ -1,21 +1,29 @@
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import ThemeSwitcher from './components/theme-switcher';
-import Link from 'next/link';
+import { Auth, ThemeSwitcher, HeroSection, AboutSection, SkillsSection, BlogSection, TestimonialSection } from "./components";
 
 export default function Home() {
+  
   return (
    <div>
-      <header className="flex justify-end items-center p-4 gap-4 h-16">
-        <SignedIn>
-            <UserButton />
-            <Link href="/dashboard" className="text-blue-500 dark:text-blue-300">Go to Dashboard</Link>
-        </SignedIn>
-        <SignedOut>
-          <SignInButton />
-          <SignUpButton />
-        </SignedOut>     
-        <ThemeSwitcher />
+      <header className="w-full px-5 bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(66,66,66,0.7)] flex justify-between items-center gap-4 h-16 sticky top-0 z-5">
+        <div>
+          <a className="font-bold text-2xl">
+            Sarah Soutoul
+          </a>
+        </div>
+        <div className="flex items-center gap-4">
+          <Auth /> 
+          <ThemeSwitcher />
+        </div>
       </header>
-    </div>
+      <main className="m-8 p-8">
+        <HeroSection/>
+        <div className="flex flex-col lg:flex-row gap-6">
+          <AboutSection />
+          <SkillsSection />
+        </div>
+        <BlogSection />
+        <TestimonialSection />
+      </main>
+   </div>
   );
 }
