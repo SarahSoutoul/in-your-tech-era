@@ -1,6 +1,6 @@
 'use client';
 
-import { UserInfo, OrganisationInfo, ProgressJournal } from '../components/dashboard-components';
+import { UserInfo, OrganisationInfo, ProgressJournal } from '@/app/components';
 
 export default function DashboardPage() {
  

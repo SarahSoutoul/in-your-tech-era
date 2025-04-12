@@ -1,6 +1,6 @@
 'use client';
 
-import ServiceBox from '../../common/service-box';
+import { ServiceBox } from '@/app/components';
 import { services } from '../../../data/serviceData';
 
 export default function ServicesSection() {

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from './providers/theme-provider'
-import ClerkProvider from './providers/clerk-provider'
+import ClerkProvider from '@/app/providers/clerk-provider'
 import { Geist, Geist_Mono } from "next/font/google";
-import { Header, Footer } from "./components";
+import { Header, Footer } from "@/app/components";
 import "./globals.css";
 
 const geistSans = Geist({

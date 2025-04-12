@@ -1,6 +1,6 @@
 'use client';
 
-import Skill from "../../common/skill";
+import { Skill } from '@/app/components';
 import { skillsData } from "../../../data/skillsData";
 
 export default function SkillsSection() {

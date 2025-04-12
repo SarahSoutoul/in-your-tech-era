@@ -1,6 +1,6 @@
 'use client';
 
-import { Auth, ThemeSwitcher } from "../../../components";
+import { Auth, ThemeSwitcher } from "@/app/components";
 
 export default function Header() {
   return (

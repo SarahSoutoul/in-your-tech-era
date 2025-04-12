@@ -1,6 +1,6 @@
 'use client';
 
-import TestimonialBox from '../../common/testimonial-box';
+import { TestimonialBox } from '@/app/components';
 import { testimonials } from '../../../data/testimonialsData';
 
 export default function TestimonialSection() {

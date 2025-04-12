@@ -1,6 +1,6 @@
 'use client';
 
-import BlogPost from "../../common/blog-post";
+import { BlogPost } from "@/app/components";
 import { blogPosts } from '../../../data/blogData';
 
 export default function BlogSection() {

@@ -1,6 +1,6 @@
 'use client';
 
-import { HeroSection, AboutSection, SkillsSection, BlogSection, TestimonialSection, ServicesSection } from "./components";
+import { HeroSection, AboutSection, SkillsSection, BlogSection, TestimonialSection, ServicesSection } from "@/app/components";
 
 export default function Home() {
   return (
