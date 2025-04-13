@@ -7,12 +7,12 @@ description: Learn how Clerk is architected and how it works under the hood.
 
 <section>And here is _markdown_ in **JSX**</section>
 
+
 ```jsx
 export function Thing() {
   return <>World</>
 }
 ```
-
 
 Some tasks, such as [signing up a user](https://clerk.com/docs/reference/frontend-api/tag/Sign-Ups#operation/createSignUps), don't require authentication, as that would defeat the purpose of the endpoint. However, endpoints designed for authenticated users, like [updating a user's details](https://clerk.com/docs/reference/frontend-api/tag/User#operation/patchUser), require FAPI to first identify the user making the request and then verify their authorization. This ensures that users cannot modify another user's details. Typically, this is achieved by sending a signed token with the request, either as a cookie or a header. You can [learn more about Clerk's authentication tokens later in this guide](#stateful-authentication).
 
@@ -26,8 +26,10 @@ A user's process of signing in would work as follows. This example assumes that 
 1. The server validates the credentials against a database. This is normally done by [hashing](https://clerk.com/glossary#hash) the password and comparing it with a stored password hash. Upon successful validation, it creates a new [session](https://clerk.com/glossary#session) in the database associated with the user.
 1. The server responds to the browser's request by setting the session ID in a [`Set-Cookie`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie) header in the response, which sets a cookie with this value in the browser. This cookie will be automatically included in future requests from the browser in order to authenticate the user.
 
+
 > [!NOTE]
 > What happens if an attacker gets their hands on your session ID? Generally, the answer here is that you're in trouble. If an attacker gets your session ID, they can sign in as you. Therefore, it's best practice to use [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS) (ensures attacker can't [sniff it](https://en.wikipedia.org/wiki/Sniffing_attack)) and ensure the cookie is [set as `HttpOnly`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#httponly) (ensures attacker can't get it via remote JavaScript execution).
+
 
 ```sh {{ filename: '.env' }}
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY={{pub_key}}

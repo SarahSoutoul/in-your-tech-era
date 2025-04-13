@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 interface ServiceData {
-  id: number
-  name: string
-  price: string
-  features: string[]
+    id: number;
+    name: string;
+    price: string;
+    features: string[];
 }
 
 export default function ServiceBox({ data }: { data: ServiceData }) {
@@ -14,14 +14,16 @@ export default function ServiceBox({ data }: { data: ServiceData }) {
         {data.name}
       </label>
       <blockquote className="relative pl-6 border-l-4 border-gray-500 dark:border-purple-400 text-xl italic mb-4">
-        <ul className="m-4 list-disc text-base font-thin">
-          {data.features.map((feature, index) => (
-            <li key={index}>{feature}</li>
-          ))}
+        <ul className="m-4 list-disc text-base font-thin text-gray-500">
+            {data.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+            ))}
         </ul>
 
-        <footer className="text-sm text-gray-500 dark:text-purple-400">– {data.price}</footer>
+        <footer className="text-sm text-gray-500 dark:text-purple-400">
+            – {data.price}
+        </footer>
       </blockquote>
     </div>
-  )
+  );
 }
