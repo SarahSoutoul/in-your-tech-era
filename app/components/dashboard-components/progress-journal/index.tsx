@@ -37,8 +37,8 @@ export default function ProgressJournal() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-md space-y-6 max-w-3xl mx-auto mt-8">
-      <h2 className="text-2xl font-bold text-gray-800">📝 Your Progress Journal</h2>
+    <div className="p-6 bg-gray-100 dark:bg-[#424242] rounded-2xl shadow-md space-y-6 max-w-3xl mx-auto mt-8">
+      <h2 className="text-2xl font-bold">📝 Your Progress Journal</h2>
       
       <div>
         <h3 className="text-xl font-semibold mb-2">✅ This Week’s Tasks</h3>
@@ -62,7 +62,7 @@ export default function ProgressJournal() {
       <div>
         <h3 className="text-xl font-semibold mb-2">💬 Reflection Prompts</h3>
 
-        <label className="block font-medium mb-1 text-gray-700">What did I struggle with this week?</label>
+        <label className="block font-medium mb-1">What did I struggle with this week?</label>
         <textarea
           value={reflections.struggles}
           onChange={(e) => setReflections({ ...reflections, struggles: e.target.value })}
@@ -70,7 +70,7 @@ export default function ProgressJournal() {
           placeholder="Be real with yourself..."
         />
 
-        <label className="block font-medium mb-1 text-gray-700">What am I proud of?</label>
+        <label className="block font-medium mb-1">What am I proud of?</label>
         <textarea
           value={reflections.proudOf}
           onChange={(e) => setReflections({ ...reflections, proudOf: e.target.value })}
