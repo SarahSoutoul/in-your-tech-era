@@ -1,3 +1,7 @@
+Tasks
+1. Add final section
+2. Change the name of custome clerk provider to ThemedClerkProvider
+
 # Implement a theme switcher for your Clerk-powered Next.js application
 
 | Title | Description                                      |
