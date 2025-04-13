@@ -18,7 +18,7 @@ export default function Auth() {
        <SignedOut>
             <div className='md:flex-2 text-xs md:text-sm lg:text-2xl'>
                 <p className="font-bold">
-                    In yo <span className="text-[#FF80B5] dark:text-purple-400">tech</span> era
+                    In your <span className="text-[#FF80B5] dark:text-purple-400">tech</span> era
                 </p>
                 <p className="font-semibold">Because every girl deserves her tech era</p>
             </div>
