@@ -93,16 +93,26 @@ After checking the Clerk docs, I realized I needed to enable organisations in my
 
 ##  🌟 Highlights & Achievements  
 
+**1. Building the app**
+
 My favourite part of this project was hands down building the actual app. In my previous job, I didn’t really get the chance to work on full apps from scratch — it was usually smaller features or parts of a bigger system. So getting to build something end-to-end again felt really rewarding. I had honestly forgotten how satisfying it is to bring an idea to life and really spend time on the design and flow. I obviously loved writing the guide too (that’s something I’m super comfortable with), but this reminded me how much I missed getting my hands dirty with the full app-building process.
+
+**2. Exploring new tools**
 
 I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects.
 
+**3. Concept & Design**
+
 One thing I’m especially proud of is the concept and design of the app. This was a passion project I’ve had in the back of my mind for a while — getting to actually do it through this task was an amazing feeling. Being able to finally build a site around something I deeply care about (mentorship, community, women in tech) made this feel really personal. And on the design side, I think I found a good balance between keeping things clean and professional while also injecting bits of my personality. 
+
+**4. Writing the guide**
 
 I’m also really happy with how the guide turned out. I tried to make it super clear and easy to follow, especially for people who might be new to theme switching or Clerk. Writing helpful docs is something I’ve done a lot of in the past few years, so I wanted to make sure it wasn’t just functional, but also friendly and approachable.
 
+**5. Learning on the fly**
+
 And finally — I’m proud of the fact that I pulled this off using some tools I hadn’t worked with before. Being able to learn quickly, adapt, and figure things out on the fly is something I do a lot as a tech educator, and this project really reminded me of how valuable that skill is. It felt amazing to put that into practice and build something I genuinely care about.
-  
+
 ## 💡 Lessons & Improvements  
 
 If I could do it again, I would **[share any tweaks or improvements you would make with more time or resources]**. Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
