@@ -51,7 +51,7 @@ This app is built with [React](https://react.dev/), [TypeScript](https://www.typ
 ## 🚀 Deployed Version
 
 You can check out the live version of this project here:  
-🔗 [your-project-name.vercel.app](https://your-project-name.vercel.app)
+🔗 [In your Tech Era](https://inyourtechera.vercel.app/)
 
 > Hosted on [Vercel](https://vercel.com), optimized for fast deployment and seamless integration with Next.js.
 
