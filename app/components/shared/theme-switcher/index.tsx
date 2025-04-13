@@ -10,7 +10,7 @@ export default function ThemeSwitcher() {
   return (
     <Button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="rounded-full"
+      className="rounded-full h-8 w-8 md:h-10 md:w-10"
       variant="outline"
       size="icon"
     >
