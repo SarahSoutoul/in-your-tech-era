@@ -57,6 +57,10 @@ You can check out the live version of this project here:
 
 # ✍️ My Project Journey  
 
+## 🤔 How I approached this task
+
+Before jumping into the code, I took some time to understand the requirements and think through how I could approach the task in a way that not only met the brief but also reflected my values as a developer and educator. My goal was to build something functional, polished, and authentic—something that could stand on its own even beyond the scope of this assignment.
+
 ## 🧩 Challenges & Learnings
 
 **1. Tailwind CSS setup**
@@ -140,5 +144,7 @@ description: Learn how to build a theme switcher that applies across both your a
 **2. The why behind some of my decisions**
 
 Decisions I made for a reason: Maybe there were certain decisions you made that you want us to know the “why”
+
+**3. What have I learned from this task...**
 
 Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
