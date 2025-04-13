@@ -54,13 +54,55 @@ You can check out the live version of this project here:
 
 # ✍️ My Project Journey  
 
-## 🧩 Challenges & Learnings  
-During this project, I encountered a few challenges that really pushed me to learn and grow. One of the main difficulties was **[describe specific challenges, such as understanding certain Clerk features, dealing with certain bugs, or navigating documentation]**. I found it particularly hard to **[mention specific obstacles]**, and I spent a fair amount of time trying to **[explain how you tackled these challenges]**. Ultimately, I was able to overcome these by **[mention any resources, workarounds, or techniques you used]**.
+## 🧩 Challenges & Learnings
+
+**1. Tailwind CSS setup**
+
+This was my first time using Tailwind CSS to design an app, so there was definitely a bit of a learning curve. After setting up my theme switcher, I tried applying dark mode styles to my UI components using Tailwind — but nothing was showing up. After a lot of trial and error, I discovered my setup was using an outdated Tailwind config (pre-v4). My `globals.css` file was missing key setup for dark mode to work properly, including this crucial line:
+
+  ```css
+  @custom-variant dark (&:is(.dark *));
+  ```
+  Once I updated that, the dark styling finally started working as expected.
+
+**2. Next.js architecture**
+
+Next.js was definitely a bit of a challenge. I’ve used it before, but never to build a full app from the ground up. I wasn’t totally sure how to structure things or what best practices looked like, so I ended up spending a lot of time in the docs figuring things out as I went and had to rethink my project architecture several times.
+
+**3. App Idea & Concept**
+
+Coming up with an idea for the app was another challenge. I wanted something that wasn’t just a tech demo, but actually reflected what I’m passionate about — mentorship, community, and helping women thrive in tech — while also showcasing how Clerk could be integrated in a real-world use case. It took me a while to land on something that felt personal and practical.
+
+**4. Creating the Theme Switcher Guide**
+
+And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun.
+
+**5. Clerk & Dark Mode Integration**
+
+Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the Sign in button, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app was working fine. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add the special configuration within my environment variables instead of using a redirect to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
+
+**6. Clerk Organisation Switcher**
+
+When trying to implement the <OrganisationSwitcher /> Clerk component, I hit this error:
+
+  ```
+  ClerkRuntimeError: 🔒 Clerk: The <OrganizationSwitcher/> cannot be rendered when the feature is turned off.    Visit 'dashboard.clerk.com' to enable the feature. Since the feature is turned off, this is no-op.
+  ```
+
+After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
 
 ##  🌟 Highlights & Achievements  
-One of my favorite parts of the project was **[describe what you're proud of or excited about]**. This was a key achievement because **[explain why it stands out to you]**. For example, I made the decision to **[mention a significant decision or approach you took]**, and I felt it was the right choice because **[explain your reasoning]**. I’m especially excited about how it turned out because **[add any personal reasons why this stands out to you]**.
 
+My favourite part of this project was hands down building the actual app. In my previous job, I didn’t really get the chance to work on full apps from scratch — it was usually smaller features or parts of a bigger system. So getting to build something end-to-end again felt really rewarding. I had honestly forgotten how satisfying it is to bring an idea to life and really spend time on the design and flow. I obviously loved writing the guide too (that’s something I’m super comfortable with), but this reminded me how much I missed getting my hands dirty with the full app-building process.
+
+I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects.
+
+One thing I’m especially proud of is the concept and design of the app. This was a passion project I’ve had in the back of my mind for a while — getting to actually do it through this task was an amazing feeling. Being able to finally build a site around something I deeply care about (mentorship, community, women in tech) made this feel really personal. And on the design side, I think I found a good balance between keeping things clean and professional while also injecting bits of my personality. 
+
+I’m also really happy with how the guide turned out. I tried to make it super clear and easy to follow, especially for people who might be new to theme switching or Clerk. Writing helpful docs is something I’ve done a lot of in the past few years, so I wanted to make sure it wasn’t just functional, but also friendly and approachable.
+
+And finally — I’m proud of the fact that I pulled this off using some tools I hadn’t worked with before. Being able to learn quickly, adapt, and figure things out on the fly is something I do a lot as a tech educator, and this project really reminded me of how valuable that skill is. It felt amazing to put that into practice and build something I genuinely care about.
+  
 ## 💡 Lessons & Improvements  
-Looking back, if I had more time or resources, I would **[describe any ideas for improvement, changes you’d make, or features you’d add]**. I’ve learned that **[mention any lessons or insights gained during the project]**, and I now have a better understanding of **[describe what you've learned about Clerk or the project itself]**.
 
 If I could do it again, I would **[share any tweaks or improvements you would make with more time or resources]**. Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
