@@ -15,6 +15,9 @@ The most rewarding part of my work has always been watching my students transfor
 
 Even now, as someone who’s taught hundreds of students and worked as a software engineer, I still feel imposter syndrome. The truth is, almost every woman I’ve met in tech has felt that same fear, whether they’re two years in or thirty. This project is a small part of a dream I've had since becoming an educator. It's for all of the women I´ve mentored so far, and the ones I've yet to meet. It’s a space built with care, to *support women in tech in a way that feels empowering, human, and real*. Because we all deserve to have our *tech era* 💪
 
+> [!IMPORTANT]
+> All the content and information displayed in this project (testimonials, blog posts, mentorship packages...) is real. None of it is placeholder or fabricated. I wanted the project to feel as authentic and concrete as possible, even though it was created specifically for this task. That way, anyone reviewing it can get a clear sense of not just my technical skills, but also the kind of person, educator, and mentor I am 👩‍💻
+
 This app is built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org), [Clerk](https://clerk.dev) for auth and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
 ## 📦 Getting Started
@@ -115,4 +118,27 @@ And finally — I’m proud of the fact that I pulled this off using some tools 
 
 ## 💡 Lessons & Improvements  
 
-If I could do it again, I would **[share any tweaks or improvements you would make with more time or resources]**. Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
+**1. If I could use Clerk's custom MDX components...**
+
+If I could have, I would’ve loved to use Clerk’s custom MDX components throughout this tutorial. In particular, I would have used Clerk’s custom code snippet components — especially the `<CodeBlockTabs />` component for switching between different code variations, and the ability to mark a code block as terminal to clearly indicate commands to be run in a terminal.
+
+The `<Steps />` component would have been an ideal fit for this kind of step-by-step guide. Instead of having numbered headings, I would have implemented this component to mark the different steps in the tutorial. In the Styling section, where I discuss different implementation options depending on whether the user is using Tailwind CSS, I would’ve used the `<Tabs />` component to clearly separate those paths.
+
+At the beginning of the tutorial, I would have implemented the `<TutorialHero />` component to provide links to any prerequisite learning materials or example repositories and would’ve done something similar for laying out the learning objectives.
+
+In the **Apply providers in the root layout** section, I thought the `<Properties />` component would land really well to be able to neatly list and describe the different props required by the `<ThemeProvider>` component.
+
+Finally, at the top of the guide, I included what would have become the file metadata if this tutorial was fully integrated into Clerk’s documentation system — referring to this:
+
+```
+---
+title: Implement a theme switcher for your Clerk-powered Next.js application
+description: Learn how to build a theme switcher that applies across both your application and Clerk components in this step-by-step guide.
+---
+```
+
+**2. The why behind some of my decisions**
+
+Decisions I made for a reason: Maybe there were certain decisions you made that you want us to know the “why”
+
+Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
