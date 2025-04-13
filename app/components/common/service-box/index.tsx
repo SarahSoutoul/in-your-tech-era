@@ -14,7 +14,7 @@ export default function ServiceBox({ data }: { data: ServiceData }) {
         {data.name}
       </label>
       <blockquote className="relative pl-6 border-l-4 border-gray-500 dark:border-purple-400 text-xl italic mb-4">
-        <ul className="m-4 list-disc text-base font-thin text-gray-500">
+        <ul className="m-4 list-disc text-base font-thin">
             {data.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
             ))}

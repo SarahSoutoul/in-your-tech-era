@@ -8,6 +8,9 @@ const nextConfig = {
   experimental: {
     mdxRs: false, // Disable mdx-rs compiler
   },
+  images: {
+    domains: ['img.clerk.com'],
+  }
   // Optionally, add any other Next.js config below
 };
 

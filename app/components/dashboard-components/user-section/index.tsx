@@ -1,6 +1,6 @@
 'use client';
 import { useUser, useSession } from '@clerk/nextjs';
-
+import Image from 'next/image';
 
 export default function UserInfo() {
   const { user } = useUser();
@@ -12,7 +12,14 @@ export default function UserInfo() {
     <section className="bg-gray-100 dark:bg-[#424242] shadow-md rounded-lg p-6 dark:text-gray-900">
         <div className='text-center dark:text-white'>
             <h2 className="text-xl font-bold mb-2">User Info</h2>
-            <img src={user?.imageUrl} className="size-20 rounded-full mx-auto" alt="" />
+            <Image
+                src={user?.imageUrl}
+                alt="Profile image"
+                width={400}
+                height={300}
+                className="size-20 rounded-full mx-auto"
+                priority
+            />
             <p className='font-bold py-3'>{user?.fullName}</p>
         </div>
         <div className='bg-[#FAFAFB] rounded-lg px-2.5 py-2.5 divide-y divide-[#EEEEF0]'>

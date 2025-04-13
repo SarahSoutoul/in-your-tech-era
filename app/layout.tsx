@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from './providers/theme-provider'
-import ClerkProvider from '@/app/providers/clerk-provider'
+import ThemedClerkProvider from '@/app/providers/clerk-provider'
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header, Footer } from "@/app/components";
 import "./globals.css";
@@ -29,11 +29,11 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
               <ThemeProvider attribute="class" defaultTheme="system" enableSystem>     
-                <ClerkProvider>
+                <ThemedClerkProvider>
                   <Header />
-                 {children}
-                 <Footer />
-                 </ClerkProvider>
+                  {children}
+                  <Footer />
+                 </ThemedClerkProvider>
               </ThemeProvider>
             </body>
         </html>

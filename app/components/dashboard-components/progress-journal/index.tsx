@@ -18,8 +18,8 @@ export default function ProgressJournal() {
     const saved = localStorage.getItem('progressJournal');
     if (saved) {
       const parsed = JSON.parse(saved);
-      setTasks(parsed.tasks || tasks);
-      setReflections(parsed.reflections || reflections);
+      setTasks((prev) => parsed.tasks || prev);
+      setReflections((prev) => parsed.reflections || prev);
     }
   }, []);
 
@@ -30,7 +30,7 @@ export default function ProgressJournal() {
     );
   }, [tasks, reflections]);
 
-  const toggleTask = (id) => {
+  const toggleTask = (id: number) => {
     setTasks(tasks.map(task =>
       task.id === id ? { ...task, done: !task.done } : task
     ));

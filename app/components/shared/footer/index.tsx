@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+
 export default function Footer() {
     return (
       <footer className="bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(66,66,66,0.7)] py-8 mt-10 border-t-2">
@@ -11,7 +13,7 @@ export default function Footer() {
             </div>
   
             <div className="flex space-x-6">
-              <a href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session" target="_blank" className="hover:text-white transition">Book a Session</a>
+              <Link href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session" target="_blank" className="hover:text-white transition">Book a Session</Link>
             </div>
           </div>
   

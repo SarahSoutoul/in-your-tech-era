@@ -17,9 +17,9 @@ export default function Auth() {
        </SignedIn>
        <SignedOut>
             <div className='flex-2'>
-                <a className="font-bold text-2xl">
+                <p className="font-bold text-2xl">
                     In your <span className="text-[#FF80B5] dark:text-purple-400">tech</span> era
-                </a>
+                </p>
                 <p className="font-semibold">Because every girl deserves her tech era</p>
             </div>
             <SignInButton>
