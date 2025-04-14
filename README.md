@@ -18,7 +18,7 @@ Whether someone's job hunting, learning to code, or building their portfolio, th
 Before reaching the dashboard, users land on a simple homepage that shares a bit about me - my background as a former software engineer and experienced tech educator, the technologies I teach, testimonials from past mentees, and details about my mentorship plans and pricing. It's meant to give a quick glimpse into who I am, how I work, and what this progam is all about. 
 
 > [!IMPORTANT]
-> All the content and information displayed in this project (testimonials, blog posts, mentorship packages...) is real. None of it is placeholder or fabricated. I wanted the project to feel as authentic and concrete as possible, even though it was created specifically for this task. That way, anyone reviewing it can get a clear sense of not just my technical skills, but also the kind of person, educator, and mentor I am 👩‍💻
+> All the content and information displayed in this project (testimonials, blog posts, mentorship packages) is real. None of it is placeholder or fabricated. I wanted the project to feel as authentic and concrete as possible, even though it was created specifically for this task. That way, anyone reviewing it can get a clear sense of not just my technical skills, but also the kind of person, educator, and mentor I am 👩‍💻
 
 This app is built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org), [Clerk](https://clerk.dev) for auth and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
@@ -163,7 +163,11 @@ description: Learn how to build a theme switcher that applies across both your a
 
 **2. The why behind some of my decisions...**
 
-Decisions I made for a reason: Maybe there were certain decisions you made that you want us to know the “why”
+- **Using Markdown instead of MDX for the guide:** I initially wanted to write the tutorial in MDX to align with Clerk’s style and integrate custom components. But after spending a lot of time trying to troubleshoot the setup (and not getting the visual output I needed), I decided to stick with Markdown. It wasn’t the ideal route, but it allowed me to keep moving and focus on delivering something clear and useful.
+- **Building the homepage with real information:** I didn´t want this app to feel like a generic SaaS product. The homepage includes my story, my background and approach to mentorship to give you a clear sense of who I am and how I work. It was a way to inject some personality beyond the chosen design and functionality of the app. I also tend to be more engaged when building a product with a clear purpose and with intention - this felt meaningful because it was based on a real need I've seen in my mentorship work. 
+- **Keeping the design minimal:** I didn't want to overcompliate my design for this app - I usually prefer minimal and functional user interfaces to prevent users from being overwhelmed. In that sense, the design reflects a bit of me too.
+- **Writing docs alongside development**: Normally, I choose to save documentation for the end, but this time, I decided to write as I built. This helped me keep my thought process clear and help me remember the challenges and wins along the way. 
+- **Tech choices**: I hadn't worked with Tailwind CSS before, but chose to use it here because of how well it integrates with Next.js, and because I wanted to challenge myself and learn something new. It made the process more challenging, but made the final result even more rewarding. It was also my first time using Vercel for deployment (I usually go with Render), but given it was built by the creators of Next.js, it felt like the natural choice for seamless integration. Also, it was another tool to add to my toolbox and I really enjoyed exploring what it had to offer.
 
 **3. Features I would have built if I had more time...**
 
