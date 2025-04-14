@@ -126,13 +126,13 @@ And finally — I’m proud of the fact that I pulled this off using some tools 
 
 **1. If I could use Clerk's custom MDX components...**
 
-If I could have, I would’ve loved to use Clerk’s custom MDX components throughout this tutorial. In particular, I would have used Clerk’s custom code snippet components — especially the `<CodeBlockTabs />` component for switching between different code variations, and the ability to mark a code block as terminal to clearly indicate commands to be run in a terminal.
+If I could have, I would’ve loved to use Clerk’s custom MDX components throughout this tutorial. In particular, I would have used Clerk’s custom code snippet components — especially the `<CodeBlockTabs />` component for switching between different code variations (for e.g - Typescript vs JavaScript or npm vs yarn), and the ability to mark a code block as terminal to clearly indicate commands to be run in a terminal. I would have also used the highlighting feature to be able to highlight specific changes in a code block, especially with changes to the `app/layout.tsx` file. 
 
 The `<Steps />` component would have been an ideal fit for this kind of step-by-step guide. Instead of having numbered headings, I would have implemented this component to mark the different steps in the tutorial. In the Styling section, where I discuss different implementation options depending on whether the user is using Tailwind CSS, I would’ve used the `<Tabs />` component to clearly separate those paths.
 
 At the beginning of the tutorial, I would have implemented the `<TutorialHero />` component to provide links to any prerequisite learning materials or example repositories and would’ve done something similar for laying out the learning objectives.
 
-In the **Apply providers in the root layout** section, I thought the `<Properties />` component would land really well to be able to neatly list and describe the different props required by the `<ThemeProvider>` component.
+In the **Apply providers in the root layout** section, I think the `<Properties />` component would land really well to be able to neatly list and describe the different props required by the `<ThemeProvider>` component.
 
 Finally, at the top of the guide, I included what would have become the file metadata if this tutorial was fully integrated into Clerk’s documentation system — referring to this:
 
