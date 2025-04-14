@@ -1,29 +1,36 @@
 
 # In Your Tech Era – Client Portal & Mentorship Dashboard ✨ 
 
-Welcome to the heart of my mentorship platform 👩‍💻💫  
+Welcome to the heart of **In Your Tech Era** - a mentorship platform built for women breaking into tech to track progress, access resources, and stay connected between sessions 👩‍💻💫  
 
 ## 📝 Project description & main features
 
-This project is a mentorship platform designed to support women breaking into tech - a space to track progress, access resources, and stay connected between sessions. The platform includes the following:
-- A personalised dashboard for each mentee to allow them to track their progress
-- An interactive progress journal
-- A view into their upcoming mentoring sessions
+This project is a lightweight client portal for my mentorship program, providing each mentee with a personalised dashboard where they can:
 
-## 💖 What this project means to me
+- View their curated learning plan 
+- Keep track of their goals and progress
+- Reflect on their journey in a progress journal
+- See upcoming sessions and prep notes
+- Book future sessions via a Calendly integration 
 
-I didn’t start in tech — I studied journalism and came into code through storytelling. Learning to code changed my life, and this project is a *love letter to that journey*. It’s for people like me — women who didn’t always see themselves as “technical” or feel like they belonged in the tech world.
+Whether someone's job hunting, learning to code, or building their portfolio, this platform keeps everything they need in one place. The goal is to make tech mentorship accessible, personalised and empowering, expecially for mentees navigating the early stages of their tech journeys. 
 
-When I became a tech educator, I started dreaming about building something of my own — a *coding space for women to learn, grow, and feel like they belong*. I’ve seen firsthand the challenges women face in tech, and I wanted to create an environment where they feel empowered, not intimidated.
-
-The most rewarding part of my work has always been watching my students transform. I’ve seen women walk into class with almost no confidence, saying things like “I’m just not smart enough” or “I feel so stupid”. And every single time, my heart breaks a little because I've been there too. But then, they grow into bold, brilliant developers who know their worth and thrive in their roles. That transformation means everything to me. It proves the power of mentoring and helping others navigate their own tech journeys. So often, it starts just by seeing someone who looks like them in front of the class. Representation *matters*. It’s a quiet but powerful reminder: *you belong here*.
-
-Even now, as someone who’s taught hundreds of students and worked as a software engineer, I still feel imposter syndrome. The truth is, almost every woman I’ve met in tech has felt that same fear, whether they’re two years in or thirty. This project is a small part of a dream I've had since becoming an educator. It's for all of the women I´ve mentored so far, and the ones I've yet to meet. It’s a space built with care, to *support women in tech in a way that feels empowering, human, and real*. Because we all deserve to have our *tech era* 💪
+Before reaching the dashboard, users land on a simple homepage that shares a bit about me - my background as a former software engineer and experienced tech educator, the technologies I teach, testimonials from past mentees, and details about my mentorship plans and pricing. It's meant to give a quick glimpse into who I am, how I work, and what this progam is all about. 
 
 > [!IMPORTANT]
 > All the content and information displayed in this project (testimonials, blog posts, mentorship packages...) is real. None of it is placeholder or fabricated. I wanted the project to feel as authentic and concrete as possible, even though it was created specifically for this task. That way, anyone reviewing it can get a clear sense of not just my technical skills, but also the kind of person, educator, and mentor I am 👩‍💻
 
 This app is built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org), [Clerk](https://clerk.dev) for auth and [Tailwind CSS](https://tailwindcss.com/) for styling.
+
+## 💖 What this project means to me
+
+I didn’t start in tech — I studied journalism and came into code through storytelling. Learning to code changed my life, and this project is a **love letter to that journey**. It’s for people like me — women who didn’t always see themselves as “technical” or feel like they belonged in the tech world.
+
+When I became a tech educator, I started dreaming about building something of my own — **a coding space for women to learn, grow, and feel like they belong**. I’ve seen firsthand the challenges women face in tech, and I wanted to create an environment where they feel empowered, not intimidated.
+
+The most rewarding part of my work has always been watching my students transform. I’ve seen women walk into class with almost no confidence, saying things like “I’m just not smart enough” or “I feel so stupid”. And every single time, my heart breaks a little because I've been there too. But then, they grow into bold, brilliant developers who know their worth and thrive in their roles. That transformation means everything to me. It proves the power of mentoring and helping others navigate their own tech journeys. So often, it starts just by seeing someone who looks like them in front of the class. **Representation matters**. It’s a quiet but powerful reminder: *you belong here*.
+
+Even now, as someone who’s taught hundreds of students and worked as a software engineer, I still feel imposter syndrome. The truth is, almost every woman I’ve met in tech has felt that same fear, whether they’re two years in or thirty. This project is a small part of a dream I've had since becoming an educator. It's for all of the women I´ve mentored so far, and the ones I've yet to meet. It’s a space built with care, to support women in tech in a way that feels empowering, human, and real. Because we all deserve to have our **tech era** 💪
 
 ## 📦 Getting started
 
@@ -64,8 +71,16 @@ You can check out the live version of this project here:
 
 ### 🤔 How I approached this task
 
-Before jumping into the code, I took some time to understand the requirements and think through how I could approach the task in a way that not only met the brief but also reflected my values as a developer and educator. My goal was to build something functional, polished, and authentic—something that could stand on its own even beyond the scope of this assignment.
+Before jumping into the code, I spent some time reading through the brief to understand all the requirements. I wanted to ensure that my work met the brief, but also reflected my values as a software engineer and educator. My goal was to build something functional and polished while staying authentic to who I am. But getting there was challenging - here's how I approached the task:
 
+1. I started things off by building a minimal app to experiment with Clerk integration and get familiar with Next.js architecture and features. This helped me understand the foundations before adding anything more complex.
+2. Once I felt more confident, I added a theme switcher to test functionality and styling logic. There were a few challenges along the way, especially figuring out how to make Tailwind CSS work but I eventually got it working.
+3. After getting the theme switcher working, I realized I finally had a clear grasp of the step-by-step process, so I paused app development and shifted my full focus to writing the tutorial guide. I made sure to follow the style guide closely and initially tried to write it in MDX, but after a few struggles (explained later in this README), I reverted to Markdown.
+4. Once the guide was drafted, I went through a full review process: reading it from a fresh perspective, following the steps as if I was a new user, and making notes where the flow or code snippets needed refinement. I also noted where Clerk's custom MDX components could be used, so I'd be able to include that in future documentation.
+5. Once the guide was in a good place, I returned to the app but was still unsure of the app concept. After thinking it over, I decided to build a mentorship platform based on the services I've been offering on the side. That's when the project really came to life.
+6. I started with the homepage, then moved on to the dashboard. As I build, I had to do a lot of refactoring to clean up the architecture as well as research into docs for the tools I was using. During this process, I also started writing my project documentation alongside the build process, and made sure to deploy the app early to set up a simple CI/CD flow.
+7. From there, it was all about refining and reviewing, from tweaking the guide to cleaning up the code and making sure everything felt cohesive. I kept going until I felt satisfied with the end result.  
+   
 ### 🧩 Challenges & Learnings
 
 **1. Tailwind CSS setup**
@@ -146,10 +161,29 @@ description: Learn how to build a theme switcher that applies across both your a
 ---
 ```
 
-**2. The why behind some of my decisions**
+**2. The why behind some of my decisions...**
 
 Decisions I made for a reason: Maybe there were certain decisions you made that you want us to know the “why”
 
-**3. What have I learned from this task...**
+**3. Features I would have built if I had more time...**
+
+While this project was built as part of this task, I'd love to continue developing it into something more robust and functional. Here are a few features I would have liked to include or hope to add in the future:
+
+- **Stripe integration** to allow mentees to purchase mentorship packages directly through the platform
+- **Github integration** so mentees can submit their work and receive feedback within the portal
+- A **curated, searchable library** of tools, templates and guides tailoed to different stages of the tech journey
+- An **in-app instant messaging feature** for easier communications
+- **Gamification elements** integrated within the app to boost motivation of mentees
+- An **admin (mentor) dashboard** for me to manage and track mentee progress, review notes and plan next steps across sessions 
+
+**4. What have I learned from this task...**
+
+I've learned so much from this task - like I mentioned earlier, I hadn't built an app from the ground up in a while, so getting back into that process taught me a lot. 
+
+From a technical perspective, I was able to solidify my understanding of Next.js, TypeScript, Tailwind CSS and Clerk's infrastructure. Being able to get more hands-on experience with integrating authentication, designing project structure and architecture, and thinking about the overall flow of the app was extremely valuable. 
+
+From a personal perspective, I learned to be patient with myself and give myself grace when I felt stuck. There were a lot of moments spent experimenting, iterating, and refining, which sometimes led to periods of self-doubt or uncertainty. I also learned the importance of adaptability - for exmaple, when MDX wasn't working the way I'd hoped, I spent a long time trying to make it work because I really wanted to use it. But in the end, I decided to pivot to Markdown - while this wasn't what I wanted, I decided it was more important to make steady progress rather than get hung up on the "perfect" solution. 
+
+Finally, I learned how to manage my time more effectively and juggle multiple tasks at once. From building the app to writing the docs to refining the code, I really enjoyed the process of wearing different hats. That variety kept things engaging and interesting to me - it felt as I was applying different skillsets all at once. 
 
 Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
