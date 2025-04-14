@@ -2,8 +2,7 @@
 
 | Title | Description                                      |
 |------|--------------------------------------------------|
-| Implement a theme switcher for your Clerk-powered Next.js application   | Learn how to build a theme switcher that applies across both your application and Clerk components in this step-by-step guide.           |
-
+| Implement a theme switcher for your Clerk-powered Next.js application   | Learn how to build a theme switcher that applies to both your application and Clerk components in this step-by-step guide.           |
 
 ## **You'll learn the following:**
 
@@ -98,9 +97,9 @@ The following example demonstrates how to configure a custom Clerk provider to s
   >  
   > Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR. If you configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
   >  
-  > In your original setup, you may already have a `ClerkProvider` in your `app/layout.jsx` file. You will have to refactor this setup in the upcoming steps.
+  > In your original setup, you may already have a `ClerkProvider` in your `app/layout.tsx` file. You'll refactor this setup in the next section.
 
-1. Run the following command to install `@clerk-themes` to your Next.js app:
+1. Run the following command to install `@clerk/themes` to your Next.js app:
     
       ```sh {{ filename: 'terminal' }}
       npm install @clerk/themes
@@ -140,7 +139,7 @@ The following example demonstrates how to configure a custom Clerk provider to s
 
 Now, it’s time to integrate both the **theme provider** and **custom Clerk provider** into the app's root layout to ensure consistent theming and authentication UI across the entire app.
 
-In your original setup, the default `<ClerkProvider>` from `@clerk/nextjs` is likely wrapping your entire `<html>` block. You'll now have to replace that with your custom `<ThemedClerkProvider>` component and update how both providers are applied. Instead of wrapping the full `<html>`element, render both providers nested within the `<body>`tag. This ensures proper theme  and integration with Clerk's authentication components. 
+In your original setup, the default `<ClerkProvider>` from `@clerk/nextjs` is likely wrapping your entire `<html>` block. You'll now have to replace that with your custom `<ThemedClerkProvider>` component and update how both providers are applied. Instead of wrapping the full `<html>`element, render both providers nested within the `<body>`tag. This ensures proper theme and integration with Clerk's authentication components. 
 
 The following example demonstrates how to refactor your code accordingly:
 
