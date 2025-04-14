@@ -100,7 +100,7 @@ The following example demonstrates how to configure a custom Clerk provider to s
 
     ```tsx
     // providers/clerk-provider.tsx
-    'use client';
+    'use client'
           
     import { ClerkProvider } from '@clerk/nextjs';
     import { dark } from '@clerk/themes';
@@ -316,7 +316,7 @@ In your `globals.css` file, add the following code to enable dark mode styling i
 
 **1. How to apply individual styles with Tailwind CSS**
 
-Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tailwind’s `dark:` modifier:
+Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tailwind’s [`dark:` modifier](https://tailwindcss.com/docs/dark-mode):
 
 ```html
 <p className="text-black dark:text-purple-400">
