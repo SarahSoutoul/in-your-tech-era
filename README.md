@@ -109,14 +109,14 @@ And finally, creating the theme switcher guide came with its own set of challeng
 
 **5. Clerk & dark mode integration**
 
-Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the Sign in button, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app was working fine. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add the special configuration within my environment variables instead of using a redirect to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
+Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the Sign in button, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app respected it. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add the special configuration within my environment variables instead of using a redirect to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
 
 **6. Clerk organisation switcher implementation**
 
 When trying to implement the <OrganisationSwitcher /> Clerk component, I hit this error:
 
   ```
-  ClerkRuntimeError: 🔒 Clerk: The <OrganizationSwitcher/> cannot be rendered when the feature is turned off.    Visit 'dashboard.clerk.com' to enable the feature. Since the feature is turned off, this is no-op.
+  ClerkRuntimeError: 🔒 Clerk: The <OrganizationSwitcher/> cannot be rendered when the feature is turned off. Visit 'dashboard.clerk.com' to enable the feature. Since the feature is turned off, this is no-op.
   ```
 
 After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
