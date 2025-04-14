@@ -44,13 +44,28 @@ Even now, as someone who’s taught hundreds of students and worked as a softwar
   npm install
   ```
 
-### 2. Run the following to start the development server
+### 2. Add the required environment variables to an `.env` file
+
+> [!NOTE]
+> **To access your Clerk keys, first create a [Clerk.com](https://clerk.com/) account then open `https://dashboard.clerk.com/`. Create a new Clerk application and copy the keys from Step 2 in the Next.js Quickstart tab.**  
+
+```sh
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/dashboard
+NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=/dashboard
+```
+
+### 3. Run the following to start the development server
 
   ```sh
   npm run dev
   ```
 
-### 3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result
+### 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result
 
 ## 🛠️ Tech stack
 
