@@ -60,6 +60,7 @@ The following example demonstrates how to configure a custom theme provider to e
 2. Inside this directory, create a `theme-provider.tsx` file with the following code to configure your custom theme provider:  
     
     ```tsx
+    // providers/theme-provider.tsx
     'use client'
     
     import {useEffect, useState} from 'react'
@@ -108,6 +109,7 @@ The following example demonstrates how to configure a custom Clerk provider to s
 2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` prop, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
     ```tsx
+    // providers/clerk-provider.tsx
     'use client';
           
     import { ClerkProvider } from '@clerk/nextjs';
@@ -157,6 +159,7 @@ The following example demonstrates how to refactor your code accordingly:
     - `enableSystem` allows automatic switching between `dark` or `light` based on the system preferences, and works in conjunction with `defaultTheme="system"`
         
         ```tsx
+        // app/layout.tsx
         import type { Metadata } from 'next';
         import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
         import { ThemeProvider } from './providers/theme-provider';
@@ -174,9 +177,9 @@ The following example demonstrates how to refactor your code accordingly:
         
         export default function RootLayout({
           children,
-        }: {
-          children: React.ReactNode;
-        }) {
+        }: Readonly<{
+          children: React.ReactNode
+        }>) {
           return (
             <html lang="en">
               <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -209,11 +212,12 @@ Once `next-themes` is set up, it’s time to implement a toggle switcher to give
 2. In this folder, create a `theme-switcher.tsx` file and add the following code. For this, the `useTheme` hook is used again to retrieve the `theme` (current active theme being applied to the app) and `setTheme` (setter function that allows you to set the theme programatically). This ensures you can interact with the current theme and manage it. 
     
     ```tsx
+    // components/theme-switcher.tsx
     'use client'
     
     import { useTheme } from 'next-themes'
     
-    export default function ThemeSwitcher() {
+    export default function ThemeSwitcher(): JSX.Element {
       const { theme, setTheme } = useTheme()
     
       return (
@@ -233,18 +237,19 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 2. Render `<ThemeSwitcher />` within your `<header>` under your Clerk authentication components.
     
       ```tsx
+      // app/layout.tsx
       import ThemeSwitcher from "./components/theme-switcher";
     
       export default function RootLayout({
           children,
-        }: {
-          children: React.ReactNode;
-        }) {
+        }: Readonly<{
+          children: React.ReactNode
+        }>) {
           return (
             <html lang="en">
               <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                  <ClerkProvider>
+                  <ThemedClerkProvider>
                     <header className="flex justify-end items-center p-4 gap-4 h-16">
                       <SignedOut>
                         <SignInButton />
@@ -256,7 +261,7 @@ With the theme switcher set up, it’s time to include it in any page of your ch
                       <ThemeSwitcher />
                     </header>
                     {children}
-                  </ClerkProvider>
+                  </ThemedClerkProvider>
                 </ThemeProvider>
               </body>
             </html>
