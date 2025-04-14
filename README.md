@@ -3,9 +3,12 @@
 
 Welcome to the heart of my mentorship platform 👩‍💻💫  
 
-This is the dashboard I built to support women breaking into tech — a space to track progress, access resources, and stay connected between sessions. 
-
 ## 📝 Project description & main features
+
+This project is a mentorship platform designed to support women breaking into tech - a space to track progress, access resources, and stay connected between sessions. The platform includes the following:
+- A personalised dashboard for each mentee to allow them to track their progress
+- An interactive progress journal
+- A view into their upcoming mentoring sessions
 
 ## 💖 What this project means to me
 
