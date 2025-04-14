@@ -5,7 +5,9 @@ Welcome to the heart of my mentorship platform 👩‍💻💫
 
 This is the dashboard I built to support women breaking into tech — a space to track progress, access resources, and stay connected between sessions. 
 
-## 💖 What This Project Means to Me
+## 📝 Project description & main features
+
+## 💖 What this project means to me
 
 I didn’t start in tech — I studied journalism and came into code through storytelling. Learning to code changed my life, and this project is a *love letter to that journey*. It’s for people like me — women who didn’t always see themselves as “technical” or feel like they belonged in the tech world.
 
@@ -20,7 +22,7 @@ Even now, as someone who’s taught hundreds of students and worked as a softwar
 
 This app is built with [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Next.js](https://nextjs.org), [Clerk](https://clerk.dev) for auth and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-## 📦 Getting Started
+## 📦 Getting started
 
 ### 1. Run the following to install dependencies
 
@@ -36,7 +38,7 @@ This app is built with [React](https://react.dev/), [TypeScript](https://www.typ
 
 ### 3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result
 
-## 🛠️ Tech Stack
+## 🛠️ Tech stack
 
 | Category        | Tech Used                                  | Notes                                           |
 |-----------------|---------------------------------------------|-------------------------------------------------|
@@ -48,20 +50,20 @@ This app is built with [React](https://react.dev/), [TypeScript](https://www.typ
 | Hosting         | <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />                | Deployment platform optimized for Next.js       |
 | Version Control | <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> | Code collaboration and versioning               |
 
-## 🚀 Deployed Version
+## 🚀 Deployed version
 
 You can check out the live version of this project here:  
 🔗 [In your Tech Era](https://inyourtechera.vercel.app/)
 
 > Hosted on [Vercel](https://vercel.com), optimized for fast deployment and seamless integration with Next.js.
 
-# ✍️ My Project Journey  
+## ✍️ My project journey  
 
-## 🤔 How I approached this task
+### 🤔 How I approached this task
 
 Before jumping into the code, I took some time to understand the requirements and think through how I could approach the task in a way that not only met the brief but also reflected my values as a developer and educator. My goal was to build something functional, polished, and authentic—something that could stand on its own even beyond the scope of this assignment.
 
-## 🧩 Challenges & Learnings
+### 🧩 Challenges & Learnings
 
 **1. Tailwind CSS setup**
 
@@ -76,19 +78,19 @@ This was my first time using Tailwind CSS to design an app, so there was definit
 
 Next.js was definitely a bit of a challenge. I’ve used it before, but never to build a full app from the ground up. I wasn’t totally sure how to structure things or what best practices looked like, so I ended up spending a lot of time in the docs figuring things out as I went and had to rethink my project architecture several times.
 
-**3. App Idea & Concept**
+**3. App idea & concept**
 
 Coming up with an idea for the app was another challenge. I wanted something that wasn’t just a tech demo, but actually reflected what I’m passionate about — mentorship, community, and helping women thrive in tech — while also showcasing how Clerk could be integrated in a real-world use case. It took me a while to land on something that felt personal and practical.
 
-**4. Creating the Theme Switcher Guide**
+**4. Creating the theme switcher guide**
 
 And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun.
 
-**5. Clerk & Dark Mode Integration**
+**5. Clerk & dark mode integration**
 
 Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the Sign in button, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app was working fine. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add the special configuration within my environment variables instead of using a redirect to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
 
-**6. Clerk Organisation Switcher**
+**6. Clerk organisation switcher implementation**
 
 When trying to implement the <OrganisationSwitcher /> Clerk component, I hit this error:
 
@@ -98,7 +100,7 @@ When trying to implement the <OrganisationSwitcher /> Clerk component, I hit thi
 
 After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
 
-##  🌟 Highlights & Achievements  
+###  🌟 Highlights & Achievements  
 
 **1. Building the app**
 
@@ -108,7 +110,7 @@ My favourite part of this project was hands down building the actual app. In my 
 
 I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects.
 
-**3. Concept & Design**
+**3. Concept & design**
 
 One thing I’m especially proud of is the concept and design of the app. This was a passion project I’ve had in the back of my mind for a while — getting to actually do it through this task was an amazing feeling. Being able to finally build a site around something I deeply care about (mentorship, community, women in tech) made this feel really personal. And on the design side, I think I found a good balance between keeping things clean and professional while also injecting bits of my personality. 
 
@@ -120,7 +122,7 @@ I’m also really happy with how the guide turned out. I tried to make it super 
 
 And finally — I’m proud of the fact that I pulled this off using some tools I hadn’t worked with before. Being able to learn quickly, adapt, and figure things out on the fly is something I do a lot as a tech educator, and this project really reminded me of how valuable that skill is. It felt amazing to put that into practice and build something I genuinely care about.
 
-## 💡 Lessons & Improvements  
+### 💡 Lessons & Improvements  
 
 **1. If I could use Clerk's custom MDX components...**
 
