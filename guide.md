@@ -148,6 +148,7 @@ The following example demonstrates how to refactor your code accordingly:
 2. Import both providers (`<ThemeProvider>` and `<ThemedClerkProvider>`) from your custom files.
     
     ```tsx
+    // app/layout.tsx
     import { ThemeProvider } from './providers/theme-provider';
     import ThemedClerkProvider from './providers/clerk-provider';
     ```
