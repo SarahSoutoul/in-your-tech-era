@@ -77,11 +77,11 @@ You can check out the live version of this project here: [In your Tech Era](http
 Before jumping into the code, I spent some time reading through the brief to understand all the requirements. I wanted to ensure that my work met the brief, but also reflected my values as a software engineer and educator. My goal was to build something functional and polished while staying authentic to who I am. But getting there was challenging - here's how I approached the task:
 
 1. I started things off by building a minimal app to experiment with Clerk integration and get familiar with Next.js architecture and features. This helped me understand the foundations before adding anything more complex.
-2. Once I felt more confident, I added a theme switcher to test functionality and styling logic. There were a few challenges along the way, especially figuring out how to make Tailwind CSS work but I eventually got it working.
-3. After getting the theme switcher working, I realized I finally had a clear grasp of the step-by-step process, so I paused app development and shifted my full focus to writing the tutorial guide. I made sure to follow the style guide closely and initially tried to write it in MDX, but after a few struggles (explained later in this README), I reverted to Markdown.
+2. Once I felt more confident, I added the theme switcher to test functionality and styling logic. There were a few challenges along the way, especially figuring out how to make Tailwind CSS work but I eventually got it working.
+3. After getting the theme switcher to work, I realized I finally had a clear grasp of the step-by-step process, so I paused app development and shifted my full focus to writing the tutorial guide. I made sure to follow the style guide closely and initially tried to write it in MDX, but after a few struggles (explained later in this README), I reverted to Markdown.
 4. Once the guide was drafted, I went through a full review process: reading it from a fresh perspective, following the steps as if I was a new user, and making notes where the flow or code snippets needed refinement. I also noted where Clerk's custom MDX components could be used, so I'd be able to include that in future documentation.
 5. Once the guide was in a good place, I returned to the app but was still unsure of the app concept. After thinking it over, I decided to build a mentorship platform based on the services I've been offering on the side. That's when the project really came to life.
-6. I started with the homepage, then moved on to the dashboard. As I built, I had to do a lot of refactoring to clean up the architecture as well as research into docs for the tools I was using. During this process, I also started writing my project documentation alongside the build process, and made sure to deploy the app early to set up a simple CI/CD flow.
+6. I started with the homepage, then moved on to the dashboard. As I built, I had to do a lot of refactoring to clean up the architecture and researching into the docs for the tools I was using. During this process, I also started writing my project documentation alongside the build process, and made sure to deploy the app early to set up a simple CI/CD flow.
 7. From there, it was all about refining and reviewing, from tweaking the guide to cleaning up the code and making sure everything felt cohesive. I kept going until I felt satisfied with the end result.  
    
 ### Challenges & Learnings 🧩 
@@ -103,15 +103,11 @@ Next.js was definitely a bit of a challenge. I’ve used it before, but never to
 
 Coming up with an idea for the app was another challenge. I wanted something that wasn’t just a tech demo, but actually reflected what I’m passionate about — mentorship, community, and helping women thrive in tech — while also showcasing how Clerk could be integrated in a real-world use case. It took me a while to land on something that felt personal and practical.
 
-**4. Creating the theme switcher guide**
+**4. Clerk & dark mode integration**
 
-And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun.
+Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the `<SignInButton>`, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app respected it. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add special configuration within my environment variables to prevent being redirected to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
 
-**5. Clerk & dark mode integration**
-
-Another issue I ran into was getting the Clerk components to respect dark mode. When I clicked on the Sign in button, the dark theme wouldn’t apply to the Clerk sign-in page — even though the rest of my app respected it. I went back to the Clerk docs and realised I needed to embed the `<SignIn />` component directly into the app and add the special configuration within my environment variables instead of using a redirect to a new page. That way, the component stays on the same URL and has access to the theme on the client side.
-
-**6. Clerk organisation switcher implementation**
+**5. Clerk organisation switcher implementation**
 
 When trying to implement the <OrganisationSwitcher /> Clerk component, I hit this error:
 
@@ -121,11 +117,15 @@ When trying to implement the <OrganisationSwitcher /> Clerk component, I hit thi
 
 After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
 
+**6. Creating the theme switcher guide**
+
+And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun.
+
 ### Highlights & Achievements 🌟
 
 **1. Building the app**
 
-My favourite part of this project was hands down building the actual app. In my previous job, I didn’t really get the chance to work on full apps from scratch — it was usually smaller features or parts of a bigger system. So getting to build something end-to-end again felt really rewarding. I had honestly forgotten how satisfying it is to bring an idea to life and really spend time on the design and flow. I obviously loved writing the guide too (that’s something I’m super comfortable with), but this reminded me how much I missed getting my hands dirty with the full app-building process.
+My favourite part of this project was hands down building the actual app. In my previous job, I didn’t really get the chance to work on full apps from scratch — it was usually smaller features or parts of a bigger system. So getting to build something end-to-end again felt really rewarding. I had honestly forgotten how satisfying it is to bring an idea to life and really spend time on the design and flow. I obviously loved writing the guide too (that’s something I’m comfortable with), but this reminded me how much I missed getting my hands dirty with the full app-building process.
 
 **2. Exploring new tools**
 
@@ -141,15 +141,15 @@ I’m also really happy with how the guide turned out. I tried to make it super 
 
 **5. Learning on the fly**
 
-And finally — I’m proud of the fact that I pulled this off using some tools I hadn’t worked with before. Being able to learn quickly, adapt, and figure things out on the fly is something I do a lot as a tech educator, and this project really reminded me of how valuable that skill is. It felt amazing to put that into practice and build something I genuinely care about.
+And finally, I’m proud of the fact that I pulled this off using some tools I hadn’t worked with before. Being able to learn quickly, adapt, and figure things out on the fly is something I do a lot as a tech educator, and this project really reminded me of how valuable that skill is. It felt amazing to put that into practice and build something I genuinely care about.
 
 ### Lessons & Improvements 💡
 
 **1. If I could use Clerk's custom MDX components...**
 
-If I could have, I would’ve loved to use Clerk’s custom MDX components throughout this tutorial. In particular, I would have used Clerk’s custom code snippet components — especially the `<CodeBlockTabs />` component for switching between different code variations (for e.g - Typescript vs JavaScript or npm vs yarn), and the ability to mark a code block as terminal to clearly indicate commands to be run in a terminal. I would have also used the highlighting feature to be able to highlight specific changes in a code block, especially with changes to the `app/layout.tsx` file. 
+If I could have, I would’ve loved to use Clerk’s custom MDX components throughout this tutorial. In particular, I would have used Clerk’s custom code snippet components — especially the `<CodeBlockTabs />` component for switching between different code variations (for e.g - TypeScript vs JavaScript or npm vs yarn) and marking a code block as terminal to clearly indicate commands to be run in a terminal. I would have also used the highlighting feature to be able to highlight specific changes in a code block, especially with changes to the `app/layout.tsx` file. 
 
-The `<Steps />` component would have been an ideal fit for this kind of step-by-step guide. Instead of having numbered headings, I would have implemented this component to mark the different steps in the tutorial. In the Styling section, where I discuss different implementation options depending on whether the user is using Tailwind CSS, I would’ve used the `<Tabs />` component to clearly separate those paths.
+The `<Steps />` component would have been an ideal fit for this kind of step-by-step guide. Instead of having numbered headings, I would have implemented this component to mark the different steps in the tutorial. In the **Apply styling based on theme across your app** section, where I discuss different implementation options depending on whether the user is using Tailwind CSS, I would’ve used the `<Tabs />` component to clearly separate those paths.
 
 At the beginning of the tutorial, I would have implemented the `<TutorialHero />` component to provide links to any prerequisite learning materials or example repositories and would’ve done something similar for laying out the learning objectives.
 
@@ -168,29 +168,36 @@ description: Learn how to build a theme switcher that applies across both your a
 
 - **Using Markdown instead of MDX for the guide:** I initially wanted to write the tutorial in MDX to align with Clerk’s style and integrate custom components. But after spending a lot of time trying to troubleshoot the setup (and not getting the visual output I needed), I decided to stick with Markdown. It wasn’t the ideal route, but it allowed me to keep moving and focus on delivering something clear and useful.
 - **Building the homepage with real information:** I didn´t want this app to feel like a generic SaaS product. The homepage includes my story, my background and approach to mentorship to give you a clear sense of who I am and how I work. It was a way to inject some personality beyond the chosen design and functionality of the app. I also tend to be more engaged when building a product with a clear purpose and with intention - this felt meaningful because it was based on a real need I've seen in my mentorship work. 
-- **Keeping the design minimal:** I didn't want to overcompliate my design for this app - I usually prefer minimal and functional user interfaces to prevent users from being overwhelmed. In that sense, the design reflects a bit of me too.
-- **Writing docs alongside development**: Normally, I choose to save documentation for the end, but this time, I decided to write as I built. This helped me keep my thought process clear and help me remember the challenges and wins along the way. 
+- **Keeping the design minimal:** I didn't want to overcomplicate my design for this app - I usually prefer minimal and functional user interfaces to prevent users from being overwhelmed. In that sense, the design reflects a bit of me too.
+- **Writing docs alongside development**: Normally, I choose to save documentation for the end, but this time, I decided to write as I built. This helped me keep my thought process clear and remember the challenges and wins along the way. 
 - **Tech choices**: I hadn't worked with Tailwind CSS before, but chose to use it here because of how well it integrates with Next.js, and because I wanted to challenge myself and learn something new. It made the process more challenging, but made the final result even more rewarding. It was also my first time using Vercel for deployment (I usually go with Render), but given it was built by the creators of Next.js, it felt like the natural choice for seamless integration. Also, it was another tool to add to my toolbox and I really enjoyed exploring what it had to offer.
 
 **3. Features I would have built if I had more time...**
 
 While this project was built as part of this task, I'd love to continue developing it into something more robust and functional. Here are a few features I would have liked to include or hope to add in the future:
 
-- **Stripe integration** to allow mentees to purchase mentorship packages directly through the platform
-- **Github integration** so mentees can submit their work and receive feedback within the portal
-- A **curated, searchable library** of tools, templates and guides tailoed to different stages of the tech journey
-- An **in-app instant messaging feature** for easier communications
-- **Gamification elements** integrated within the app to boost motivation of mentees
-- An **admin (mentor) dashboard** for me to manage and track mentee progress, review notes and plan next steps across sessions 
+- **Stripe integration** to allow mentees to purchase mentorship packages directly through the platform.
+- **Github integration** so mentees can submit their work and receive feedback within the portal.
+- A **curated, searchable library** of tools, templates and guides tailoed to different stages of the tech journey.
+- An **in-app instant messaging feature** for easier communications.
+- **Gamification elements** integrated within the app to boost motivation of mentees.
+- An **admin (mentor) dashboard** for me to manage and track mentee progress, review notes and plan next steps across sessions.
+- Additional theming options tied to a mood selector with **Spotify playlists** for a personalized experience.
 
 **4. What have I learned from this task...**
 
 I've learned so much from this task - like I mentioned earlier, I hadn't built an app from the ground up in a while, so getting back into that process taught me a lot. 
 
-From a technical perspective, I was able to solidify my understanding of Next.js, TypeScript, Tailwind CSS and Clerk's infrastructure. Being able to get more hands-on experience with integrating authentication, designing project structure and architecture, and thinking about the overall flow of the app was extremely valuable. 
+From a technical perspective, I was able to solidify my understanding of Next.js, TypeScript, Tailwind CSS and Clerk's infrastructure. Being able to get more hands-on experience with integrating authentication, designing project structure and architecture, and thinking about the overall flow of the app was extremely valuable. I loved being able to brainstorm the kind of design I wanted for the app - I explored CSS gradients, animations and other cool design tools to bring my vision to life.
 
-From a personal perspective, I learned to be patient with myself and give myself grace when I felt stuck. There were a lot of moments spent experimenting, iterating, and refining, which sometimes led to periods of self-doubt or uncertainty. I also learned the importance of adaptability - for exmaple, when MDX wasn't working the way I'd hoped, I spent a long time trying to make it work because I really wanted to use it. But in the end, I decided to pivot to Markdown - while this wasn't what I wanted, I decided it was more important to make steady progress rather than get hung up on the "perfect" solution. 
+From a personal perspective, I learned to be patient with myself and give myself grace when I felt stuck. There were a lot of moments spent experimenting, iterating, and refining, which sometimes led to periods of self-doubt or uncertainty. I also learned the importance of adaptability - for example, when MDX wasn't working the way I'd hoped, I spent a long time trying to make it work because I really wanted to use it. But in the end, I decided to pivot to Markdown - while this wasn't what I wanted, I decided it was more important to make steady progress rather than get hung up on the "perfect" solution. 
 
 Finally, I learned how to manage my time more effectively and juggle multiple tasks at once. From building the app to writing the docs to refining the code, I really enjoyed the process of wearing different hats. That variety kept things engaging and interesting to me - it felt as I was applying different skillsets all at once. 
 
-Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects!
+## 💭 Final thoughts
+
+Thank you for taking the time to review my submission and check out this project! 
+
+Getting to build this application and write the tutorial guide has been a *really* rewarding experience for me. It gave me the chance to combine my passion for tech education and mentorship with my technical skills. It pushed me in ways I hadn't expected and I learned a ton through it all. I hope I was able to convey my personality while also showcasing my technical writing and engineering capabilities. 
+
+Overall, I’m proud of what I’ve accomplished and looking forward to applying what I’ve learned to future projects! 
