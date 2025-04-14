@@ -15,7 +15,7 @@ This project is a lightweight client portal for my mentorship program, providing
 | 🗓️ Upcoming sessions overview | See what’s coming up next and prep with session notes                             |
 | 🔗 Calendly integration        | Book future mentorship sessions directly from their dashboard                     |
 
-> **Bonus feature:** Mentees can choose between light and dark themes using the built-in theme switcher (*more themes coming soon*). If you're interested to see how I ensured the theme applied across the app - including Clerk components - [head to this step-by-step tutorial guide here](https://github.com/SarahSoutoul/clerk-theme-switcher/blob/main/guide.md) 🧑‍🏫 
+> **Bonus feature:** Mentees can choose between light and dark themes using the built-in theme switcher (*more themes coming soon*). If you're interested to see how I ensured the theme applied across the app - including Clerk components - check out this [step-by-step tutorial guide on how I made it happen](https://github.com/SarahSoutoul/clerk-theme-switcher/blob/main/guide.md) 🧑‍🏫 
 
 Whether someone's job hunting, learning to code, or building their portfolio, this platform keeps everything they need in one place. The goal is to make tech mentorship accessible, personalised and empowering, especially for mentees navigating the early stages of their tech journeys. 
 
