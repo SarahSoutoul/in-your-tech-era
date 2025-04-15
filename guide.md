@@ -6,10 +6,11 @@
 
 ## **You'll learn the following:**
 
-- Install `next-themes`
-- Create a custom Theme Provider
-- Integrate theme switching with Clerk using `@clerk/themes`
-- Implement a theme switcher
+- How to use the `next-themes` library
+- How to create a custom Theme Provider
+- How to integrate theme switching with Clerk using `@clerk/themes`
+- How to implement a theme switcher component
+- How to style your app based on the active theme 
 
 ## Introduction
 
@@ -26,7 +27,7 @@ This will be achieved by using [next-themes](https://www.npmjs.com/package/next-
 >  
 > `next-themes` can also detect the user’s system preferences (`light` or `dark`) and applies it by default. In addition to that, it saves the selected theme in `localStorage`, so the preference remains even after refreshing the page.
 
-This guide assumes you've already set up a Next.js project with Clerk authentication and are using [Next.js App Router](https://clerk.com/docs/quickstarts/nextjs), but the concepts can be adapted to [Next.js Pages Router](https://clerk.com/docs/quickstarts/nextjs-pages-router). If you haven’t, follow the steps in the [**Clerk Next.js Quickstart guide**](https://clerk.com/docs/quickstarts/nextjs).
+This guide assumes you've already set up a Next.js project with Clerk authentication and are using [Next.js App Router](https://clerk.com/docs/quickstarts/nextjs), but the concepts can be adapted to [Next.js Pages Router](https://clerk.com/docs/quickstarts/nextjs-pages-router). If you haven’t, follow the steps in the [**Clerk Next.js Quickstart guide**](https://clerk.com/docs/quickstarts/nextjs). All code snippets in this tutorial are written in [TypeScript](https://www.typescriptlang.org/). 
 
 Let’s get started! 
 
@@ -44,16 +45,7 @@ npm install next-themes
 
 The `<ThemeProvider>` component from `next-themes` is a React context provider that manages the theme state in your Next.js app. It wraps your entire app to provide theme-related functionality globally. 
 
-The following example demonstrates how to configure a custom theme provider to ensure the `<ThemeProvider>` (renamed `<NextThemeProvider>` in the code) only renders on the client side until the component is mounted, avoiding hydration errors.  
-
-> [!NOTE]
-> **Why is a custom `<ThemeProvider>` needed?**  
->  
-> By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes`.  
->  
-> This occurs because the theme is set client-side (e.g., from `localStorage` or system preferences), but in a Server-side Rendering (SSR) environment, Next.js doesn’t know the preferred theme. The server may initially render the page with a different theme, causing a mismatch between the server-rendered and client-rendered HTML.  
->  
-> To prevent this issue, the `mounted` state delays rendering of the theme provider and its children until the component has mounted on the client. This ensures that the correct theme is applied without mismatch.
+The following example demonstrates how to configure a custom theme provider to ensure the `<ThemeProvider>` component (renamed `<NextThemeProvider>` in the code) only renders on the client side until the component is mounted, avoiding hydration errors:
 
 1. In your `/app` folder, create a `/providers` folder.
 2. Inside this directory, create a `theme-provider.tsx` file with the following code to configure your custom theme provider:  
@@ -80,24 +72,23 @@ The following example demonstrates how to configure a custom theme provider to e
       return <NextThemeProvider {...props}>{children}</NextThemeProvider>
     }
     ```
-   
+    
+> [!NOTE]
+> **Why is a custom `<ThemeProvider>` needed?**  
+>  
+> By default, Next.js renders components on the server, which can lead to hydration mismatches when handling client-side theme settings like `next-themes`.  
+>  
+> This occurs because the theme is set client-side (e.g., from `localStorage` or system preferences), but in a Server-side Rendering (SSR) environment, Next.js doesn’t know the preferred theme. The server may initially render the page with a different theme, causing a mismatch between the server-rendered and client-rendered HTML.  
+>  
+> To prevent this issue, the `mounted` state delays rendering of the theme provider and its children until the component has mounted on the client. This ensures that the correct theme is applied without mismatch.   
 
 ## 3. **Integrate Clerk with theme switching**
 
-To ensure that Clerk’s authentication UI follows the selected theme, Clerk provides a way to customize the appearance of its components using the `appearance` prop. It can be applied to [`<ClerkProvider>`](https://clerk.com/docs/components/clerk-provider) directly to share styles across every component, or individually to any of the Clerk components. 
+To ensure that Clerk’s authentication UI aligns with the selected site theme, Clerk provides a way to customize the appearance of its components using the `@clerk/themes` package. It works by passing a chosen theme to the `appearance` prop of a Clerk component. You can either apply it to [`<ClerkProvider>`](https://clerk.com/docs/components/clerk-provider) directly to share styles across every component, or set it individually on any of the Clerk components.
 
-The `appearance` prop accepts multiple properties, including a `baseTheme` property to pass the corresponding theme. This is what can be used to sync up the Clerk components with the selected theme. For more information on Clerk themes, refer to the [Clerk documentation on themes](https://clerk.com/docs/customization/themes).
+The `appearance` prop accepts multiple customization options, including a `baseTheme` property. This is what can be used to sync up the Clerk's UI with your app's active theme dynamically. For more detailed configuration options and available themes, refer to the [Clerk documentation on themes](https://clerk.com/docs/customization/themes).
 
-The following example demonstrates how to configure a custom Clerk provider to synchronize Clerk's components with the app's theme.
-  
-  > [!NOTE]
-  > **Why is a custom `<ClerkProvider>` needed?**  
-  >  
-  > Similar to the custom `<ThemeProvider>`, a custom `ClerkProvider` is necessary to handle client-side theme synchronization in a Next.js app.  
-  >  
-  > Since the `useTheme` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR. If you configure the `ClerkProvider` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
-  >  
-  > In your original setup, you may already have a `ClerkProvider` in your `app/layout.tsx` file. You'll refactor this setup in the next section.
+The following example demonstrates how to configure a custom Clerk provider to synchronize Clerk's components with the app's theme:
 
 1. Run the following command to install `@clerk/themes` to your Next.js app:
     
@@ -105,18 +96,18 @@ The following example demonstrates how to configure a custom Clerk provider to s
       npm install @clerk/themes
       ```
     
-2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. The `useTheme` hook from `next-themes` is used to acess the current app theme. By retrieving `resolvedTheme` and passing it to Clerk’s `appearance` prop, the authentication UI will synchronize with the app’s theme. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
+2. In the `/providers` folder, create a `clerk-provider.tsx` file with the following code. It uses the `useTheme()` hook from `next-themes` to access the current app theme. Specifically, it retrieves the `resolvedTheme` property, which represents the active theme (either `light` or `dark`) based on the user's selection or system preference. By passing it to Clerk’s `appearance` prop, the authentication UI will synchronize with the app’s theme, and therefore, the rest of the app. This ensures that when a user switches between themes, Clerk’s UI components also update accordingly.
 
     ```tsx
     // providers/clerk-provider.tsx
-    'use client';
+    'use client'
           
     import { ClerkProvider } from '@clerk/nextjs';
     import { dark } from '@clerk/themes';
     import { useTheme } from 'next-themes';
           
     export default function ThemedClerkProvider({ children }: { children: React.ReactNode }) {
-      // Retrieves the resolved theme from the useTheme hook
+      // Retrieves the resolved theme from the useTheme() hook
       const { resolvedTheme } = useTheme();
           
       return (
@@ -128,18 +119,19 @@ The following example demonstrates how to configure a custom Clerk provider to s
     ```
 
   > [!NOTE]
-  > **What is `resolvedTheme`?**  
+  > **Why is a custom `<ClerkProvider>` needed?**  
   >  
-  > A property provided by the `useTheme` hook from `next-themes`—it represents the currently applied theme in your Next.js app.  
+  > Similar to the custom `<ThemeProvider>`, a custom `<ClerkProvider>` is necessary to handle client-side theme synchronization in a Next.js app.  
   >  
-  > This value can either be `'light'` or `'dark'`, depending on the theme set by the user or determined by the system’s preferences.
-  
+  > Since the `useTheme()` hook from `next-themes` relies on client-side JavaScript to determine the current theme, it’s not available during SSR. If you configure the `<ClerkProvider>` directly in `RootLayout`, it could cause a **hydration mismatch** between the server-rendered HTML and the client-rendered JavaScript, leading to inconsistent UI behavior.  
+  >  
+  > In your original setup, you may already have a `<ClerkProvider>` in your `app/layout.tsx` file. You'll refactor this setup in the next section.
 
-## 4. **Apply providers in the root layout**
+## 4. **Apply providers in the `RootLayout`**
 
-Now, it’s time to integrate both the **theme provider** and **custom Clerk provider** into the app's root layout to ensure consistent theming and authentication UI across the entire app.
+Now, it’s time to integrate both the **`<ThemeProvider>`** and **`<ThemedClerkProvider>`** components into your app's root layout to ensure consistent theming and authentication UI across the entire app.
 
-In your original setup, the default `<ClerkProvider>` from `@clerk/nextjs` is likely wrapping your entire `<html>` block. You'll now have to replace that with your custom `<ThemedClerkProvider>` component and update how both providers are applied. Instead of wrapping the full `<html>`element, render both providers nested within the `<body>`tag. This ensures proper theme and integration with Clerk's authentication components. 
+In your original setup, the default `<ClerkProvider>` from `@clerk/nextjs` is likely wrapping the entire `<html>` block. You'll now have to replace that with your custom `<ThemedClerkProvider>` component and update how both providers are applied. Instead of wrapping the full `<html>` element, nest both providers within the `<body>` element. This ensures proper theme detection and integration with Clerk's authentication components. 
 
 The following example demonstrates how to refactor your code accordingly:
 
@@ -152,8 +144,8 @@ The following example demonstrates how to refactor your code accordingly:
     import ThemedClerkProvider from './providers/clerk-provider';
     ```
         
-3. Replace the existing `<ClerkProvider>` component with `<ThemedClerkProvider>` & ensure it wraps `{children}` rather than the entire `<html>` block.
-4. Wrap `<ThemedClerkProvider>` with `<ThemeProvider>` to ensure the theme settings extend to Clerk's components and pass the following three properties to `<ThemeProvider>`.
+3. Replace the existing `<ClerkProvider>` with `<ThemedClerkProvider>` in your JSX & ensure it is nested inside the `body` element, wrapping both your `<header>` and `{children}` tags.
+4. Wrap `<ThemedClerkProvider>` with `<ThemeProvider>` to ensure the theme settings extend to Clerk's components and pass the following three properties to `<ThemeProvider>`:
     - `attribute="class"` applies the current theme as a class (`light` or `dark`) to the `<html>` element
     - `defaultTheme="system"` sets the default theme to match the user’s system preference. If the user has their operating system set to dark more, the app will start with a dark theme, even before the user interacts with the theme switcher
     - `enableSystem` allows automatic switching between `dark` or `light` based on the system preferences, and works in conjunction with `defaultTheme="system"`
@@ -206,10 +198,10 @@ The following example demonstrates how to refactor your code accordingly:
 
 ## 5. **Create a theme switcher component**
 
-Once `next-themes` is set up, it’s time to implement a toggle switcher to give users the ability to change the app’s theme. 
+Once your providers are set up, it’s time to implement a toggle switcher to give users the ability to change the app’s theme. 
 
-1. Create a `components` folder, if you don’t have one.
-2. In this folder, create a `theme-switcher.tsx` file and add the following code. For this, the `useTheme` hook is used again to retrieve the `theme` (current active theme being applied to the app) and `setTheme` (setter function that allows you to set the theme programatically). This ensures you can interact with the current theme and manage it. 
+1. In your `/app` folder, create a `components` folder (if you don’t have one).
+2. In this folder, create a `theme-switcher.tsx` file and add the following code. For this, the `useTheme()` hook is used again to retrieve the `theme` (current active theme being applied to the app) and `setTheme` (setter function that allows you to set the theme programatically). This ensures you can interact with the current theme and manage it. 
     
     ```tsx
     // components/theme-switcher.tsx
@@ -217,7 +209,7 @@ Once `next-themes` is set up, it’s time to implement a toggle switcher to give
     
     import { useTheme } from 'next-themes'
     
-    export default function ThemeSwitcher(): JSX.Element {
+    export default function ThemeSwitcher(): React.ReactNode {
       const { theme, setTheme } = useTheme()
     
       return (
@@ -283,14 +275,17 @@ With the theme switcher set up, it’s time to include it in any page of your ch
 4. Locate the `<html>` element.
 5. Toggle the theme switcher back and forth.
 6. Observe the `<html>` class update between `light` and `dark`.
+7. **Optional:** switch to the `Application` tab, then navigate to the `Local Storage` section, and locate the `theme` key to observe its value changing as you toggle the theme.
 
 ## 8. Apply styling based on theme across your app
 
-Now, it’s time to implement styling across your app based on the `class` attribute (`light` or `dark`) of the `<html>` element. The following example demonstrates how to apply global styles and individual styles to your components based on active theme. 
+Now, it’s time to implement styling across your app based on the `class` attribute (`light` or `dark`) set on the `<html>` element. The following example demonstrates how to apply global styles and individual styles to your components based on the active theme. 
 
 ### **Apply global theme styles in `globals.css`**
 
-In your `globals.css` file, add the following code. Ensure you have the `@import` and `@variant` lines. The `transition` CSS property will ensure smooth transitions when switching between themes.
+**This setup assumes you're using Tailwind CSS for styling**
+
+In your `globals.css` file, add the following code to enable dark mode styling in your application. The `@variant dark` custom CSS rule applies styles conditionally when the `.dark` class is present on your elements.
     
   ```css
   /* globals.css */
@@ -321,10 +316,10 @@ In your `globals.css` file, add the following code. Ensure you have the `@import
 
 **1. How to apply individual styles with Tailwind CSS**
 
-Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tailwind’s `dark:` modifier:
+Since `next-themes` applies a `dark` class to the `<html>` tag, you can use Tailwind’s [`dark:` modifier](https://tailwindcss.com/docs/dark-mode):
 
 ```html
-<p className="text-black dark:text-white">
+<p className="text-black dark:text-purple-400">
   This text will be black in light mode and white in dark mode.
 </p>
 ```
@@ -337,9 +332,9 @@ Similarly, for a button:
 </button>
 ```
 
-**2. How to use inline styles with the `useTheme()` hook**
+**2. How to use inline styles with the `useTheme()` hook** (if you're not using Tailwind CSS)
 
-If you want to apply inline styles dynamically, you can use the `useTheme` hook from `next-themes` to conditionally style elements.
+If you want to apply inline styles dynamically, you can use the `useTheme()` hook from `next-themes` to conditionally style elements.
 
 ```tsx
 import { useTheme } from 'next-themes';
