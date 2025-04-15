@@ -3,13 +3,29 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
+type CalendlyUser = {
+    name: string;
+    email: string;
+    avatar_url?: string;
+};
+
+type CalendlyEvent = {
+    uri: string;
+    name: string;
+    start_time: string;
+    end_time: string;
+    location: {
+      join_url?: string;
+    };
+};
+
 export default function Calendar() {
     const clientId = process.env.NEXT_PUBLIC_CALENDLY_CLIENT_ID!;
     const redirectUri = process.env.NEXT_PUBLIC_CALENDLY_REDIRECT_URI!;
     const oauthUrl = `https://auth.calendly.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}`;
     const [loading, setLoading] = useState(true);
-    const [calendlyUser, setCalendlyUser] = useState<any>(null);
-    const [events, setEvents] = useState<Event[]>([]);
+    const [calendlyUser, setCalendlyUser] = useState<CalendlyUser | null>(null);
+    const [events, setEvents] = useState<CalendlyEvent[]>([]);
 
     useEffect(() => {
         async function fetchCalendlyData() {
@@ -21,12 +37,12 @@ export default function Calendar() {
 
                 setCalendlyUser(data.user);
 
-                const upcomingEvents = data.events.filter((event: any) => {
+                const upcomingEvents = data.events.filter((event: CalendlyEvent) => {
                     const eventStartTime = new Date(event.start_time);
                     return eventStartTime > new Date();
                 });
                 setEvents(upcomingEvents || []);
-            } catch (err) {
+            } catch {
                 setCalendlyUser(null);
             } finally {
                 setLoading(false);
@@ -87,7 +103,7 @@ export default function Calendar() {
                                 <p className="text-sm text-gray-600">No upcoming sessions found.</p>
                             ) : (
                                 <ul className="space-y-4">
-                                        {events.map((event: any) => (
+                                        {events.map((event: CalendlyEvent) => (
                                             <li key={event.uri} className="p-3 border rounded-md bg-white shadow-sm text-gray-600">
                                                 <p className="font-medium">{event.name}</p>
                                                 <p className="text-sm text-gray-600">

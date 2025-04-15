@@ -38,7 +38,7 @@ export default function ProgressJournal() {
         JSON.stringify({ tasks, reflections })
       );
     }
-  }, [tasks, reflections]);
+  }, [tasks, reflections, isLoaded]);
 
   return (
     <div className="p-6 bg-gray-100 dark:bg-[#424242] rounded-2xl shadow-md space-y-6 max-w-2xl">
