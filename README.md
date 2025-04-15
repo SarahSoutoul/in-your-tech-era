@@ -135,6 +135,10 @@ When trying to implement the <OrganisationSwitcher /> Clerk component, I hit thi
 
 After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
 
+**6. Calendly integration**
+
+Integrating Calendly within the application was a challenge in itself, which required me to dive deeper into server-side Next.js and Clerk Backend SDK to be able to make it happen.
+
 **6. Creating the theme switcher guide**
 
 And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun. I did choose to keep my MDX config within the project for you to see the progress there, and where I may have gone wrong - you will find my attempt at creating an MDX page under the `archived` folder. 
