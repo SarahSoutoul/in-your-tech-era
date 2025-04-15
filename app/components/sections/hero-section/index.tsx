@@ -34,7 +34,7 @@ export default function HeroSection() {
         alt="Profile image"
         width={400}
         height={300}
-        className="hidden lg:block size-100 rounded-xl mx-auto"
+        className="hidden lg:block size-100 rounded-xl"
         priority
      />
 	</section>
