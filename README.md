@@ -202,6 +202,8 @@ While this project was built as part of this task, I'd love to continue developi
 - An **admin (mentor) dashboard** for me to manage and track mentee progress, review notes and plan next steps across sessions.
 - Additional theming options tied to a mood selector with **Spotify playlists** for a personalized experience.
 
+Beyond adding new features, I would focus on refactoring the existing code to improve readability and maintainability. Additionally, I would enhance the architecture to ensure scalability and flexibility as the project grows. I’d also integrate a robust database solution to securely store and manage mentee information, providing a better experience for both mentors and mentees
+
 **4. What have I learned from this task...**
 
 I've learned so much from this task - like I mentioned earlier, I hadn't built an app from the ground up in a while, so getting back into that process taught me a lot. 
