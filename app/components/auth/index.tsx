@@ -5,7 +5,7 @@ import { useUser } from '@clerk/nextjs';
 
 export default function Auth() {
   const { user } = useUser();
-
+  console.log("hola", user)
   return (
     <>
        <SignedIn>
