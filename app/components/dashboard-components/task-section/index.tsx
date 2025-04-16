@@ -43,7 +43,7 @@ export default function TaskSection({ tasks, setTasks }: FormProps) {
         <div className='flex flex-col gap-6'>
             <h3 className="text-xl font-semibold flex items-center gap-2">
                 <FaCheckCircle className='h-6 w-6 text-[#FF80B5] dark:text-purple-400' />
-                This Week’s Tasks
+                This week’s tasks
             </h3>
             <form onSubmit={handleAddTask} className="flex gap-6">
                 <input

@@ -7,7 +7,7 @@ export default function DashboardPage() {
   return (
     <section>
       <main className="m-10">
-        <p className='font-semibold text-xl pb-6'>Your mentorship starts here</p>
+        <p className='font-semibold text-2xl pb-6'>Your mentorship starts here</p>
         <section className='flex flex-col md:flex-row justify-between gap-10'>
           <section className='flex flex-col gap-6 flex-2'>
             <Calendar />

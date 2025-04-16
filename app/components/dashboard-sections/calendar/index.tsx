@@ -60,7 +60,7 @@ export default function Calendar() {
     if (loading) return <p>Loading...</p>;
 
     return (
-        <div className="p-6 bg-gray-100 dark:bg-[#424242] rounded-2xl shadow-md space-y-6 max-w-2xl">
+        <div className="p-6 bg-gray-100 dark:bg-[#424242] rounded-2xl shadow-md space-y-6">
             {!calendlyUser ? (
                 <a
                     href={oauthUrl}
@@ -70,33 +70,37 @@ export default function Calendar() {
                 </a>
             ) : (
             <div className="space-y-4">
-                <p>
-                Connected as <strong>{calendlyUser.name}</strong> ({calendlyUser.email})
-                </p>
-                {calendlyUser.avatar_url ? (
-                    <Image
-                        src={calendlyUser.avatar_url}
-                        alt="Calendly avatar"
-                        width={400}
-                        height={300}
-                        className="size-15 rounded-full"
-                        priority
-                    />
-                ) : null} 
+                <div className="flex justify-between">
+                    <div>
+                        <p>
+                        Connected as <strong>{calendlyUser.name}</strong> ({calendlyUser.email})
+                        </p>
+                        <a
+                            href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session"
+                            className="text-[#FF80B5] dark:text-purple-400 underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >
+                            Schedule a new session with me
+                        </a>
+                    </div>
+                    {calendlyUser.avatar_url ? (
+                        <Image
+                            src={calendlyUser.avatar_url}
+                            alt="Calendly avatar"
+                            width={400}
+                            height={300}
+                            className="size-15 rounded-full"
+                            priority
+                        />
+                    ) : null} 
+                </div>
                 <button
                     onClick={disconnectCalendly}
-                    className="px-4 py-2 bg-red-500 text-white rounded"
+                    className="px-4 py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded"
                 >
                     Disconnect Calendly
                 </button>
-                <a
-                    href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session"
-                    className="text-blue-500 underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Schedule a new session with me
-                </a>
                 <div className="mt-4">
                     <h3 className="text-md font-semibold mb-2">Upcoming Sessions</h3>
                         {events.length === 0 ? (
@@ -115,7 +119,7 @@ export default function Calendar() {
                                                         <p className="text-sm text-blue-500">
                                                             <a
                                                                 href={event.location.join_url}
-                                                                className="underline"
+                                                                className="text-[#FF80B5] dark:text-purple-400 underline"
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                             >

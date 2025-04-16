@@ -38,7 +38,7 @@ export default function ReflectionSection({ reflections, setReflections }: FormP
         <div className="flex flex-col gap-6">
             <h3 className="text-xl font-semibold flex items-center gap-2">
                 <TbBubbleTextFilled className='h-6 w-6 text-[#FF80B5] dark:text-purple-400' />
-                This Week’s Reflections
+                This week’s reflections
             </h3>
             <form onSubmit={handleReflectionSubmit} className="space-y-2">
                 <label className="block font-medium mb-1">What did I struggle with this week?</label>
@@ -56,12 +56,14 @@ export default function ReflectionSection({ reflections, setReflections }: FormP
                     className="w-full border rounded-md p-2"
                     placeholder="Celebrate your wins!"
                 />
-                <Button
-                    className="w-full py-2 bg-blue-500 text-white rounded-md"
+                <div className="flex justify-end">
+                    <Button
+                    className="py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded-md"
                     variant="outline"
-                >
+                    >
                     Submit Reflections
-                </Button>
+                    </Button>
+                </div>
             </form>
             <div>
                 <ul className="space-y-3">
