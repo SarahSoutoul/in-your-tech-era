@@ -1,7 +1,5 @@
 'use client'
 
-import Link from "next/link"
-
 export default function LearningHub() {
     return (
         <section className="shadow-lg rounded-lg p-6 bg-gray-100 dark:bg-[#424242] space-y-4">
