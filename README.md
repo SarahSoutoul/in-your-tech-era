@@ -96,6 +96,7 @@ There were quite a few challenges along the way. I had to dig into the Calendly 
 It pushed me to think deeper about architecture, user experience, and how to bring everything together in a way that made sense both technically and visually. Definitely a learning moment, and one I’m really proud of. Here are some screenshots of the feature:
 
 ### Before a user links their Calendly account
+
 <img width="572" alt="Screenshot 2025-04-15 at 7 44 12 p m" src="https://github.com/user-attachments/assets/d9a40474-e475-493f-9ca2-1bf57ec5ddb7" />
 
 ### After a user links their Calendly account
