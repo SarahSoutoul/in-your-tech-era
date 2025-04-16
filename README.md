@@ -169,7 +169,7 @@ My favourite part of this project was hands down building the actual app. In my 
 
 **2. Exploring new tools**
 
-I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects. Another exploration I really enjoyed was integrating Calendly within the app to give users the ability to book future sessions and see their upcoming sessions. Being able to successfully implement this integration required me to dive deeper into server-side Next.js and Clerk Backend SDK. It took a long time to successfully get to the end result, but I am really happy about how it turned out. See more info on Calendly integration [here](#my-favourite-feature)
+I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects. Another exploration I really enjoyed was integrating Calendly within the app to give users the ability to book future sessions and see their upcoming sessions. Being able to successfully implement this integration required me to dive deeper into server-side Next.js and Clerk Backend SDK. It took a long time to successfully get to the end result, but I am really happy about how it turned out. 
 
 **3. Concept & design**
 
