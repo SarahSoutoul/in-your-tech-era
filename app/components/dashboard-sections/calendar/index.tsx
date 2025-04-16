@@ -64,7 +64,7 @@ export default function Calendar() {
             {!calendlyUser ? (
                 <a
                     href={oauthUrl}
-                    className="px-4 py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded"
+                    className="px-4 py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:hover:bg-gray-400"
                 >
                     Connect your Calendly
                 </a>
@@ -97,7 +97,7 @@ export default function Calendar() {
                 </div>
                 <button
                     onClick={disconnectCalendly}
-                    className="px-4 py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded"
+                    className="px-4 py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:hover:bg-gray-400"
                 >
                     Disconnect Calendly
                 </button>

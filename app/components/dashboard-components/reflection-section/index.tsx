@@ -58,8 +58,8 @@ export default function ReflectionSection({ reflections, setReflections }: FormP
                 />
                 <div className="flex justify-end">
                     <Button
-                    className="py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded-md"
-                    variant="outline"
+                        className="py-2 bg-[#FF80B5] dark:bg-purple-400 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:hover:bg-gray-400"
+                        variant="outline"
                     >
                     Submit Reflections
                     </Button>

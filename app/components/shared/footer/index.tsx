@@ -13,7 +13,7 @@ export default function Footer() {
             </div>
   
             <div className="flex space-x-6">
-              <Link href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session" target="_blank" className="hover:text-white transition">Book a Session</Link>
+              <Link href="https://calendly.com/soutoulsarah-uk/1-1-mentor-session" target="_blank" className="hover:text-purple-400 transition">Book a Session</Link>
             </div>
           </div>
   
