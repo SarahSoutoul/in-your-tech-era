@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="m-5 p-10 bg-gradient-to-br from-[#FFB5A7] via-[#FF80B5] to-[#A3D8FF] dark:from-[#FFCB70] dark:via-[#C751C0] dark:to-[#4158D0] p-6 shadow-md rounded-lg dark:text-gray-900 flex gap-10">
+    <section className="m-5 p-10 bg-gradient-to-br from-[#FFB5A7] via-[#FF80B5] to-[#A3D8FF] dark:from-[#FFCB70] dark:via-[#C751C0] dark:to-[#4158D0] p-6 shadow-md rounded-lg dark:text-gray-900 flex gap-10 justify-between">
       <div className="w-2xl">
         <hgroup>
           <h1 className='text-5xl font-bold my-5'>Sarah Soutoul</h1>
