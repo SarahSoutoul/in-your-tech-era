@@ -12,8 +12,7 @@ This project is a lightweight client portal for my mentorship program, providing
 | 📚 Curated learning plan      | View a personalized roadmap based on their tech goals                             |
 | 🎯 Goal & progress tracker    | Keep track of goals, completed tasks, and ongoing progress                   |
 | 📓 Progress journal           | Reflect on what they’re learning and how they’re feeling along the way            |
-| 🗓️ Upcoming sessions overview | See what’s coming up next and prep with session notes                             |
-| 🔗 Calendly integration        | Book future mentorship sessions directly from their dashboard                     |
+| 🔗 Calendly integration        | Book future mentorship sessions, and see and join upcoming sessions directly from their dashboard                    |
 
 > **Bonus feature:** Mentees can choose between light and dark themes using the built-in theme switcher (*more themes coming soon*). If you're interested to see how I ensured the theme applied across the app - including Clerk components - check out this [step-by-step tutorial guide on how I made it happen](https://github.com/SarahSoutoul/clerk-theme-switcher/blob/main/guide.md) 🧑‍🏫 
 
@@ -88,6 +87,29 @@ You can check out the live version of this project here: [In your Tech Era](http
 
 > Hosted on [Vercel](https://vercel.com), optimized for fast deployment and seamless integration with Next.js.
 
+## 🏆 My "most proud" feature: Calendly Integration
+
+Out of everything I built, integrating Calendly is the feature I’m most proud of. This is the piece that really made the project feel like a real mentorship platform, not just a dashboard, but a space where users can actually take action. I wanted mentees to be able to book future sessions, see what’s coming up, and even join their sessions, all from the platform itself. Making that happen was super rewarding, but definitely not easy.
+
+There were quite a few challenges along the way. I had to dig into the Calendly developer docs, figure out how to handle authenticated session links, and make sure the flow felt seamless. On top of that, I was working with Clerk's Backend SDK to make sure the right data was connected to the right user, without compromising the structure of the app.
+
+It pushed me to think deeper about architecture, user experience, and how to bring everything together in a way that made sense both technically and visually. Definitely a learning moment, and one I’m really proud of. Here are some screenshots of the feature:
+
+### Before a user links their Calendly account
+<img width="572" alt="Screenshot 2025-04-15 at 7 44 12 p m" src="https://github.com/user-attachments/assets/d9a40474-e475-493f-9ca2-1bf57ec5ddb7" />
+
+### After a user links their Calendly account
+
+Once the user links their Calendly account, they can view and manage their upcoming sessions directly from the platform. Here’s how it looks in both dark mode and light mode.
+
+**Dark mode**
+
+<img width="572" alt="Screenshot 2025-04-15 at 7 45 32 p m" src="https://github.com/user-attachments/assets/ee319506-bd8c-41eb-8034-863377cd5b70" />
+
+**Light mode**
+
+<img width="572" alt="Screenshot 2025-04-15 at 7 45 41 p m" src="https://github.com/user-attachments/assets/eba3f9b7-c054-470a-8de5-f7847d892c60" />
+
 ## ✍️ My project journey  
 
 ### How I approached this task 🤔
@@ -135,10 +157,6 @@ When trying to implement the <OrganisationSwitcher /> Clerk component, I hit thi
 
 After checking the Clerk docs, I realized I needed to enable organisations in my Clerk dashboard for the switcher to work properly. Once I did that, the issue was resolved.
 
-**6. Calendly integration**
-
-Integrating Calendly within the application was a challenge in itself, which required me to dive deeper into server-side Next.js and Clerk Backend SDK to be able to make it happen.
-
 **6. Creating the theme switcher guide**
 
 And finally, creating the theme switcher guide came with its own set of challenges. Writing the content wasn’t the issue. I knew what I wanted to share but figuring out how to present it was tricky. I initially tried building it as an MDX file, but I couldn’t get it to render the way I wanted. So, I pivoted back to plain Markdown, and focused on making it look clean, clear, and hopefully a little fun. I did choose to keep my MDX config within the project for you to see the progress there, and where I may have gone wrong - you will find my attempt at creating an MDX page under the `archived` folder. 
@@ -151,7 +169,7 @@ My favourite part of this project was hands down building the actual app. In my 
 
 **2. Exploring new tools**
 
-I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects.
+I also loved getting to try out some new tools and tech along the way. Tailwind CSS, for example, completely blew me away — it’s so powerful and makes styling so much more intuitive and easy. I’m definitely going to keep using it in future projects. Another exploration I really enjoyed was integrating Calendly within the app to give users the ability to book future sessions and see their upcoming sessions. Being able to successfully implement this integration required me to dive deeper into server-side Next.js and Clerk Backend SDK. It took a long time to successfully get to the end result, but I am really happy about how it turned out. 
 
 **3. Concept & design**
 
@@ -188,6 +206,7 @@ description: Learn how to build a theme switcher that applies across both your a
 
 **2. The why behind some of my decisions...**
 
+- **Why I stored the tasks and reflection notes using `localStorage`:** I chose to use `localStorage` to save tasks and reflection notes so that users can keep their data even after refreshing the page or closing the browser. It’s a simple way to persist data directly in the browser without needing a backend or database. However, if I had more time, I would plan to move to a proper database so that the data can be synced across devices and accounts, but for now, `localStorage` helps keep everything lightweight and fast while still giving users a smooth experience.
 - **Using Markdown instead of MDX for the guide:** I initially wanted to write the tutorial in MDX to align with Clerk’s style and integrate custom components. But after spending a lot of time trying to troubleshoot the setup (and not getting the visual output I needed), I decided to stick with Markdown. It wasn’t the ideal route, but it allowed me to keep moving and focus on delivering something clear and useful.
 - **Building the homepage with real information:** I didn´t want this app to feel like a generic SaaS product. The homepage includes my story, my background and approach to mentorship to give you a clear sense of who I am and how I work. It was a way to inject some personality beyond the chosen design and functionality of the app. I also tend to be more engaged when building a product with a clear purpose and with intention - this felt meaningful because it was based on a real need I've seen in my mentorship work. 
 - **Keeping the design minimal:** I didn't want to overcomplicate my design for this app - I usually prefer minimal and functional user interfaces to prevent users from being overwhelmed. In that sense, the design reflects a bit of me too.
@@ -206,7 +225,7 @@ While this project was built as part of this task, I'd love to continue developi
 - An **admin (mentor) dashboard** for me to manage and track mentee progress, review notes and plan next steps across sessions.
 - Additional theming options tied to a mood selector with **Spotify playlists** for a personalized experience.
 
-Beyond adding new features, I would focus on refactoring the existing code to improve readability and maintainability. Additionally, I would enhance the architecture to ensure scalability and flexibility as the project grows. I’d also integrate a robust database solution to securely store and manage mentee information, providing a better experience for both mentors and mentees
+Beyond adding new features, I would focus on refactoring the existing code to improve readability and maintainability. Additionally, I would enhance the architecture to ensure scalability and flexibility as the project grows. I’d also integrate a robust database solution to securely store and manage mentee information instead of using `localStorage`, providing a better experience for both mentors and mentees. 
 
 **4. What have I learned from this task...**
 
