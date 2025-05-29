@@ -1,6 +1,6 @@
 # Implement a theme switcher for your Clerk-powered Next.js application
 
-| Title | Description                                      |
+| Title |                                       |
 |------|--------------------------------------------------|
 | Implement a theme switcher for your Clerk-powered Next.js application   | Learn how to build a theme switcher that applies to both your application and Clerk components in this step-by-step guide.           |
 
